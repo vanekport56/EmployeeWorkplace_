@@ -8,13 +8,19 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.example.employeeworkplace.Services.UserService;
 
 import java.io.IOException;
 
+/**
+ * Фильтр для проверки полноты профиля пользователя.
+ * Перенаправляет пользователя на страницу с запросом заполнения профиля, если он неполный.
+ */
 @Component
+@Slf4j
 public class ProfileCompletionFilter implements Filter {
 
     @Autowired
@@ -22,28 +28,25 @@ public class ProfileCompletionFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // Инициализация фильтра, если требуется
     }
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        // Получаем имя пользователя из сессии или контекста безопасности
         String username = httpRequest.getUserPrincipal() != null ? httpRequest.getUserPrincipal().getName() : null;
 
         if (username != null) {
-            // Если профиль неполный, перенаправляем на страницу заполнения
             boolean isProfileIncomplete = userService.isProfileIncomplete(username);
             if (isProfileIncomplete && !httpRequest.getRequestURI().startsWith("/profile/incomplete")) {
+                log.info("Профиль пользователя {} неполный. Перенаправление на страницу заполнения профиля.", username);
                 httpResponse.sendRedirect(httpRequest.getContextPath() + "/profile/incomplete");
                 return;
             }
         }
 
-        // Продолжаем цепочку фильтров
+
         chain.doFilter(request, response);
     }
 

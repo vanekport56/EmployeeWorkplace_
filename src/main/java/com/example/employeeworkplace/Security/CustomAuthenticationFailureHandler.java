@@ -43,10 +43,8 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
 
         String errorMessage = URLEncoder.encode("Не верные данные", StandardCharsets.UTF_8.toString());
 
-//        String username = request.getParameter("username");
         logger.info("Неудачная попытка входа в систему с использованием имени пользователя:"+ username);
 
-        // Перенаправляем пользователя на страницу логина с параметром ошибки
         response.sendRedirect("/login?error=" + errorMessage);
     }
 }
