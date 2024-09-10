@@ -1,0 +1,253 @@
+html {
+    background: #f0f2f5;
+    background-image: linear-gradient(135deg, #e6e9e9 0%, #d4dde1 100%);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.page {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+    border-radius: 8px;
+    max-width: 900px;
+    width: 90%;
+    padding: 30px;
+    margin: 40px auto;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:hover, input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+form {
+    margin: 0;
+}
+
+form label {
+    font-weight: 500;
+    color: #555;
+}
+
+form button {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form button:active {
+    background-color: #00408d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+form button:disabled {
+    background-color: #a1c5ff;
+    cursor: not-allowed;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.first-column {
+    width: 70%;
+}
+
+.second-column {
+    width: 30%;
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #333;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    background-color: #555;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.navbar .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown:hover a {
+    background-color: #555;
+}
+
+
+.edit-form, .change-password-form {
+    display: none;
+    margin-top: 1em;
+}
+
+.profile-info, .edit-form, .change-password-form {
+    margin-bottom: 1em;
+}
+
+.form-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message, .success-message {
+    color: red;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+}
+
+.button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+
+.link-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.link-button:hover {
+    background-color: #555;
+}
