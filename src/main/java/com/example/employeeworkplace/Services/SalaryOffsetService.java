@@ -6,6 +6,7 @@ import com.example.employeeworkplace.Repositories.Primary.SalaryOffsetRepository
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class SalaryOffsetService {
      * @param currentUser текущий пользователь
      * @return список документов, принадлежащих текущему пользователю
      */
+
     public List<SalaryOffset> filterByCurrentUser(List<SalaryOffset> documents, User currentUser) {
         logger.info("Фильтрация документов по пользователю: {}", currentUser.getId());
         return documents.stream()
@@ -42,6 +44,7 @@ public class SalaryOffsetService {
      *
      * @return список всех документов
      */
+    @Cacheable("SalaryOffset")
     public List<SalaryOffset> listSalaryOffset() {
         logger.info("Получение списка всех документов SalaryOffset");
         return salaryOffsetRepository.findAll();

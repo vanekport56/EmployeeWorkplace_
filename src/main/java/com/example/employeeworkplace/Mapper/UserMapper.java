@@ -28,11 +28,4 @@ public interface UserMapper {
      */
     UserDTO userToUserDTO(User user);
 
-    /**
-     * Преобразует объект {@link UserDTO} в {@link User}.
-     *
-     * @param userDTO Объект {@link UserDTO}
-     * @return Преобразованный объект {@link User}
-     */
-    User userDTOToUser(UserDTO userDTO);
 }

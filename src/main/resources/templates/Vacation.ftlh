@@ -108,7 +108,7 @@
                     <td class="third-column">${document.formattedVacationStartDate!''}</td>
                     <td class="fourth-column">${document.formattedVacationEndDate!''}</td>
                     <td class="sixth-column">${document.approvalStatus!''}</td>
-                    <td class="seventh-column">${userFullName!''}</td>
+                    <td class="seventh-column">${document.userFullName!''}</td>
                 </tr>
             </#list>
 

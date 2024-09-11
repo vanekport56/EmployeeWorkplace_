@@ -54,4 +54,5 @@ public class ProfileCompletionFilter implements Filter {
     public void destroy() {
         // Очистка ресурсов, если требуется
     }
+
 }

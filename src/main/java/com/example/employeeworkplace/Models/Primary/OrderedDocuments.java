@@ -25,7 +25,7 @@ public abstract class OrderedDocuments {
      * Уникальный идентификатор документа.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
 
@@ -71,6 +71,7 @@ public abstract class OrderedDocuments {
     /**
      * Файл, связанный с документом.
      */
-    @Column(name = "file")
-    private String file;
+    @ManyToOne
+    @JoinColumn(name = "file_id")
+    private FileEntity file;
 }

@@ -1,10 +1,12 @@
 package com.example.employeeworkplace.Config;
 
+import com.example.employeeworkplace.Converters.CustomJsonHttpMessageConverter;
 import io.micrometer.common.lang.NonNullApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -55,5 +57,14 @@ public class WebConfig implements WebMvcConfigurer {
                 log.debug("Настройка CORS для всех путей");
             }
         };
+    }
+    @Bean
+    public CustomJsonHttpMessageConverter customJsonHttpMessageConverter() {
+        return new CustomJsonHttpMessageConverter();
+    }
+
+    @Override
+    public void extendMessageConverters(java.util.List<HttpMessageConverter<?>> converters) {
+        converters.add(customJsonHttpMessageConverter());
     }
 }

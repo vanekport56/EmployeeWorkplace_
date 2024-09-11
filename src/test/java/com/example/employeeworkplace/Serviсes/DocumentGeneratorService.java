@@ -1,23 +1,35 @@
-package com.example.employeeworkplace.Services;
+package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.ConstantsOrderedDocuments;
 import com.example.employeeworkplace.Models.Primary.*;
 import com.example.employeeworkplace.Repositories.Primary.*;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
+import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.VacationWithSalaryService;
+import com.example.employeeworkplace.Services.VacationWithoutSalaryService;
 import jakarta.annotation.PostConstruct;
+import org.junit.jupiter.api.Disabled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 
 /**
  * Сервис для генерации и сохранения различных типов документов.
+ * <p>
+ * Этот сервис отвечает за создание и сохранение документов различных типов, таких как SalaryOffset, VacationWithoutSalary,
+ * VacationWithSalary, Certificate и TaxCertificate. При инициализации данных все существующие записи удаляются,
+ * затем создаются новые документы с использованием различных репозиториев и сервисов.
  */
+@Disabled
+@ActiveProfiles("test")
 @Service
 public class DocumentGeneratorService {
 
@@ -60,45 +72,42 @@ public class DocumentGeneratorService {
 
     /**
      * Генерирует и сохраняет документы различных типов.
+     * <p>
+     * Метод удаляет все существующие записи из репозиториев, а затем создает и сохраняет новые записи
+     * для всех типов документов: SalaryOffset, VacationWithoutSalary, VacationWithSalary, Certificate и TaxCertificate.
+     * Также включены логи для отслеживания процесса генерации документов.
      */
     @Transactional
     public void generateAndSaveDocuments() {
         logger.info("Начинаем генерацию документов.");
 
         try {
-            // Удаление всех существующих записей перед генерацией новых
+
             salaryOffsetRepository.deleteAll();
             vacationWithoutSalaryRepository.deleteAll();
             vacationWithSalaryRepository.deleteAll();
             certificateRepository.deleteAll();
             taxCertificateRepository.deleteAll();
-            // userRepository.deleteAll();
 
-            // Генерация SalaryOffset
             logger.info("Генерация документов SalaryOffset.");
             generateSalaryOffsets();
 
-            // Генерация VacationWithoutSalary
+
             logger.info("Генерация документов VacationWithoutSalary.");
             generateVacationWithoutSalaries();
 
-            // Генерация VacationWithSalary
+
             logger.info("Генерация документов VacationWithSalary.");
             generateVacationWithSalaries();
 
-            // Генерация сертификатов
+
             logger.info("Генерация сертификатов.");
             generateCertificates();
 
-            // Генерация налоговых сертификатов
+
             logger.info("Генерация налоговых сертификатов.");
             generateTaxCertificates();
 
-            // Генерация пользователя (неактивная часть)
-            /*
-            logger.info("Генерация тестового пользователя.");
-            generateTestUser();
-            */
 
         } catch (Exception e) {
             logger.error("Произошла ошибка при генерации документов: ", e);
@@ -108,12 +117,18 @@ public class DocumentGeneratorService {
         logger.info("Генерация документов завершена.");
     }
 
+    /**
+     * Инициализирует данные при создании компонента.
+     * <p>
+     * Этот метод вызывается после создания компонента и выполняет генерацию и сохранение документов.
+     */
     @PostConstruct
     public void initializeData() {
         generateAndSaveDocuments();
     }
 
-    private void generateSalaryOffsets() {
+    @Transactional
+    protected void generateSalaryOffsets() {
         for (int i = 0; i < 15; i++) {
             SalaryOffset salaryOffset = new SalaryOffset();
             salaryOffset.setNameOfTheDocument(String.format("Salary Offset Document %d", i));
@@ -123,11 +138,11 @@ public class DocumentGeneratorService {
 
             String documentNumber = documentNumberGeneratorService.generateDocumentNumber("SO");
             salaryOffset.setDocumentNumber(documentNumber);
-            Double sum = i + (i / 1.2);
+            BigDecimal sum = BigDecimal.valueOf(i + (i / 1.2));
             salaryOffset.setSumOfMoney(sum);
 
             salaryOffsetRepository.save(salaryOffset);
-            logger.debug("Создан документ SalaryOffset: Название документа: '{}', Дата создания: '{}', Номер документа: '{}', Сумма: '{}'",
+            logger.debug("Создан документ SalaryOffset: Название документа: '{}', Дата создания: '{}', Номер документа: '{}', Сумма: '{}",
                     salaryOffset.getNameOfTheDocument(),
                     salaryOffset.getDateOfCreation(),
                     salaryOffset.getDocumentNumber(),
@@ -135,7 +150,8 @@ public class DocumentGeneratorService {
         }
     }
 
-    private void generateVacationWithoutSalaries() {
+    @Transactional
+    protected void generateVacationWithoutSalaries() {
         for (int i = 0; i < 10; i++) {
             VacationWithoutSalary vacationWithoutSalary = new VacationWithoutSalary();
             vacationWithoutSalary.setVacationStartDate(LocalDate.now());
@@ -160,7 +176,8 @@ public class DocumentGeneratorService {
         }
     }
 
-    private void generateVacationWithSalaries() {
+    @Transactional
+    protected void generateVacationWithSalaries() {
         for (int i = 0; i < 10; i++) {
             VacationWithSalary vacationWithSalary = new VacationWithSalary();
             vacationWithSalary.setVacationStartDate(LocalDate.now());
@@ -185,7 +202,8 @@ public class DocumentGeneratorService {
         }
     }
 
-    private void generateCertificates() {
+    @Transactional
+    protected void generateCertificates() {
         for (int i = 0; i < 10; i++) {
             Certificate certificate = new Certificate();
             certificate.setUserId(1L);
@@ -203,8 +221,8 @@ public class DocumentGeneratorService {
                     certificate.getDocumentNumber());
         }
     }
-
-    private void generateTaxCertificates() {
+    @Transactional
+    protected void generateTaxCertificates() {
         for (int i = 0; i < 10; i++) {
             TaxCertificate taxCertificate = new TaxCertificate();
             taxCertificate.setUserId(1L);
@@ -221,7 +239,9 @@ public class DocumentGeneratorService {
                     taxCertificate.getTypeOfTheCertificate(),
                     taxCertificate.getDocumentNumber());
         }
-    }    private Date convertToSqlDate(LocalDate localDate) {
+    }
+
+    private Date convertToSqlDate(LocalDate localDate) {
         return Date.valueOf(localDate);
     }
 }

@@ -2,6 +2,7 @@ package com.example.employeeworkplace.Config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,10 +19,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Конфигурация источника данных и JPA.
- * <p>
- * Настраивает подключение к базе данных и конфигурацию JPA для управления сущностями.
- * </p>
+ * Конфигурационный класс для настройки первичного источника данных, EntityManagerFactory
+ * и менеджера транзакций для работы с основной базой данных.
  */
 @Configuration
 @EnableTransactionManagement
@@ -31,42 +30,49 @@ import java.util.Properties;
         transactionManagerRef = "primaryTransactionManager"
 )
 public class PrimaryDataSourceConfig {
+
     private static final Logger log = LoggerFactory.getLogger(PrimaryDataSourceConfig.class);
 
+    @Value("${spring.datasource.primary.url}")
+    private String url;
+
+    @Value("${spring.datasource.primary.username}")
+    private String username;
+
+    @Value("${spring.datasource.primary.password}")
+    private String password;
+
+    @Value("${spring.datasource.primary.driver-class-name}")
+    private String driverClassName;
+
     /**
-     * Настраивает источник данных для подключения к базе данных PostgreSQL.
-     * <p>
-     * Использует {@link DriverManagerDataSource} с указанными параметрами подключения.
-     * </p>
+     * Создает и настраивает первичный источник данных для подключения к основной базе данных.
      *
-     * @return Экземпляр {@link DataSource}
+     * @return источник данных для первичной базы данных
      */
     @Primary
     @Bean(name = "primaryDataSource")
     public DataSource primaryDataSource() {
-        log.debug("Создание первичного источника данных");
+        log.debug("Создание первичного источника данных с URL: {}", url);
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/D");
-        dataSource.setUsername("root");
-        dataSource.setPassword("12345678");
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
     /**
-     * Настраивает фабрику {@link LocalContainerEntityManagerFactoryBean}.
-     * <p>
-     * Конфигурирует {@link LocalContainerEntityManagerFactoryBean} для работы с Hibernate.
-     * </p>
+     * Создает и настраивает фабрику EntityManager для работы с сущностями основной базы данных.
      *
-     * @param dataSource Источник данных для фабрики
-     * @return Настроенный экземпляр {@link LocalContainerEntityManagerFactoryBean}
+     * @param dataSource источник данных, который будет использоваться фабрикой EntityManager
+     * @return фабрика EntityManager для первичной базы данных
      */
     @Primary
     @Bean(name = "primaryEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(
             @Qualifier("primaryDataSource") DataSource dataSource) {
-        log.debug("Создание первичной фабрики EntityManager");
+        log.debug("Создание первичной фабрики EntityManager для пакета com.example.employeeworkplace.Models.Primary");
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource);
         entityManager.setPackagesToScan("com.example.employeeworkplace.Models.Primary");
@@ -77,18 +83,16 @@ public class PrimaryDataSourceConfig {
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         entityManager.setJpaProperties(properties);
 
+        log.debug("Настройки Hibernate: {}", properties);
+
         return entityManager;
     }
 
     /**
-     * Настраивает менеджер транзакций {@link JpaTransactionManager}.
-     * <p>
-     * Использует {@link LocalContainerEntityManagerFactoryBean} для управления транзакциями.
-     * </p>
+     * Создает и настраивает менеджер транзакций для работы с основной базой данных.
      *
-     * @param entityManagerFactory Фабрика EntityManager для управления транзакциями
-     * @return Экземпляр {@link PlatformTransactionManager}
-     * @throws IllegalStateException Если фабрика {@link LocalContainerEntityManagerFactoryBean} не инициализирована
+     * @param entityManagerFactory фабрика EntityManager, с которой будет работать менеджер транзакций
+     * @return менеджер транзакций для первичной базы данных
      */
     @Primary
     @Bean(name = "primaryTransactionManager")
@@ -97,6 +101,7 @@ public class PrimaryDataSourceConfig {
         log.debug("Создание первичного менеджера транзакций");
 
         if (entityManagerFactory.getObject() == null) {
+            log.error("EntityManagerFactory не инициализирован");
             throw new IllegalStateException("EntityManagerFactory не инициализирован");
         }
 
