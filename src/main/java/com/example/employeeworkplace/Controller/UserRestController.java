@@ -27,12 +27,12 @@ public class UserRestController {
         User user = userService.findById(id);
 
         if (user == null) {
-            return ResponseEntity.notFound().build(); // Возвращаем статус 404 если пользователь не найден
+            return ResponseEntity.notFound().build();
         }
 
         UserDTO userDTO = new UserDTO();
         userDTO.setFullName(user.getFullName());
-        // Добавьте другие поля, если необходимо
+
         return ResponseEntity.ok(userDTO);
     }
 }

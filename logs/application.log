@@ -1,0 +1,534 @@
+2024-09-11T17:21:21.712+05:00  INFO 27444 --- [main] c.e.e.EmployeeWorkplaceApplication       : Starting EmployeeWorkplaceApplication using Java 17.0.12 with PID 27444 (C:\Users\laptop\IdeaProjects\Employee workplace\target\classes started by laptop in C:\Users\laptop\IdeaProjects\Employee workplace)
+2024-09-11T17:21:21.717+05:00 DEBUG 27444 --- [main] c.e.e.EmployeeWorkplaceApplication       : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-09-11T17:21:21.720+05:00  INFO 27444 --- [main] c.e.e.EmployeeWorkplaceApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-11T17:21:22.601+05:00  INFO 27444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-11T17:21:22.825+05:00  INFO 27444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 207 ms. Found 6 JPA repository interfaces.
+2024-09-11T17:21:22.827+05:00  INFO 27444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-11T17:21:22.838+05:00  INFO 27444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
+2024-09-11T17:21:24.277+05:00  INFO 27444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-11T17:21:24.297+05:00  INFO 27444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-11T17:21:24.298+05:00  INFO 27444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-11T17:21:24.382+05:00  INFO 27444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-11T17:21:24.383+05:00  INFO 27444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2584 ms
+2024-09-11T17:21:24.395+05:00 DEBUG 27444 --- [main] c.e.e.Security.SecurityConfig            : Создание бина CharacterEncodingFilter с кодировкой UTF-8
+2024-09-11T17:21:24.437+05:00 DEBUG 27444 --- [main] c.e.e.Config.PrimaryDataSourceConfig     : Создание первичного источника данных
+2024-09-11T17:21:24.457+05:00 DEBUG 27444 --- [main] c.e.e.Config.SecondaryDataSourceConfig   : Создание вторичного источника данных
+2024-09-11T17:21:24.458+05:00 DEBUG 27444 --- [main] c.e.e.Config.SecondaryDataSourceConfig   : Создание вторичной фабрики EntityManager
+2024-09-11T17:21:24.532+05:00  INFO 27444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-11T17:21:24.639+05:00  INFO 27444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-11T17:21:24.698+05:00  INFO 27444 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-11T17:21:25.253+05:00  INFO 27444 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-11T17:21:25.669+05:00  WARN 27444 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11T17:21:26.837+05:00  INFO 27444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-11T17:21:27.037+05:00  INFO 27444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-11T17:21:27.092+05:00 DEBUG 27444 --- [main] c.e.e.Config.PrimaryDataSourceConfig     : Создание первичной фабрики EntityManager
+2024-09-11T17:21:27.097+05:00  INFO 27444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-11T17:21:27.107+05:00  INFO 27444 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-11T17:21:27.152+05:00  INFO 27444 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-11T17:21:27.263+05:00  WARN 27444 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-11T17:21:27.631+05:00  INFO 27444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-11T17:21:27.745+05:00  INFO 27444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-11T17:21:28.124+05:00 DEBUG 27444 --- [main] c.e.e.Security.SecurityConfig            : Создание бина BCryptPasswordEncoder
+2024-09-11T17:21:28.213+05:00 DEBUG 27444 --- [main] o.s.web.filter.CharacterEncodingFilter   : Filter 'customCharacterEncodingFilter' configured for use
+2024-09-11T17:21:28.349+05:00  INFO 27444 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-11T17:21:28.917+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Начинаем генерацию документов.
+2024-09-11T17:21:28.924+05:00 DEBUG 27444 --- [main] c.e.e.Config.PrimaryDataSourceConfig     : Создание первичного менеджера транзакций
+2024-09-11T17:21:29.501+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов SalaryOffset.
+2024-09-11T17:21:29.599+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-001', Сумма: '0.0'
+2024-09-11T17:21:29.676+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-002', Сумма: '1.8333333333333335'
+2024-09-11T17:21:29.753+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-003', Сумма: '3.666666666666667'
+2024-09-11T17:21:29.838+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-004', Сумма: '5.5'
+2024-09-11T17:21:29.913+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-005', Сумма: '7.333333333333334'
+2024-09-11T17:21:29.988+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-006', Сумма: '9.166666666666668'
+2024-09-11T17:21:30.064+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-007', Сумма: '11.0'
+2024-09-11T17:21:30.138+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-008', Сумма: '12.833333333333334'
+2024-09-11T17:21:30.213+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-009', Сумма: '14.666666666666668'
+2024-09-11T17:21:30.296+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-010', Сумма: '16.5'
+2024-09-11T17:21:30.371+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-011', Сумма: '18.333333333333336'
+2024-09-11T17:21:30.452+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-012', Сумма: '20.166666666666668'
+2024-09-11T17:21:30.526+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-013', Сумма: '22.0'
+2024-09-11T17:21:30.600+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-014', Сумма: '23.833333333333336'
+2024-09-11T17:21:30.670+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-015', Сумма: '25.666666666666668'
+2024-09-11T17:21:30.670+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов VacationWithoutSalary.
+2024-09-11T17:21:30.671+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:30.746+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53617 успешно сохранён.
+2024-09-11T17:21:30.747+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-016', ID пользователя: '1'
+2024-09-11T17:21:30.747+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:30.817+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53618 успешно сохранён.
+2024-09-11T17:21:30.817+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-017', ID пользователя: '1'
+2024-09-11T17:21:30.817+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:30.888+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53619 успешно сохранён.
+2024-09-11T17:21:30.888+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-018', ID пользователя: '1'
+2024-09-11T17:21:30.888+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:30.962+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53620 успешно сохранён.
+2024-09-11T17:21:30.963+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-019', ID пользователя: '1'
+2024-09-11T17:21:30.963+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.034+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53621 успешно сохранён.
+2024-09-11T17:21:31.034+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-020', ID пользователя: '1'
+2024-09-11T17:21:31.036+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.110+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53622 успешно сохранён.
+2024-09-11T17:21:31.111+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-021', ID пользователя: '1'
+2024-09-11T17:21:31.111+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.186+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53623 успешно сохранён.
+2024-09-11T17:21:31.186+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-022', ID пользователя: '1'
+2024-09-11T17:21:31.186+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.257+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53624 успешно сохранён.
+2024-09-11T17:21:31.257+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-023', ID пользователя: '1'
+2024-09-11T17:21:31.257+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.338+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53625 успешно сохранён.
+2024-09-11T17:21:31.338+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-024', ID пользователя: '1'
+2024-09-11T17:21:31.339+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:31.423+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53626 успешно сохранён.
+2024-09-11T17:21:31.424+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-025', ID пользователя: '1'
+2024-09-11T17:21:31.424+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов VacationWithSalary.
+2024-09-11T17:21:31.424+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.503+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53627 успешно сохранён.
+2024-09-11T17:21:31.503+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-026', ID пользователя: '1'
+2024-09-11T17:21:31.504+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.589+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53628 успешно сохранён.
+2024-09-11T17:21:31.589+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-027', ID пользователя: '1'
+2024-09-11T17:21:31.589+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.661+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53629 успешно сохранён.
+2024-09-11T17:21:31.662+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-028', ID пользователя: '1'
+2024-09-11T17:21:31.662+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.734+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53630 успешно сохранён.
+2024-09-11T17:21:31.734+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-029', ID пользователя: '1'
+2024-09-11T17:21:31.735+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.807+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53631 успешно сохранён.
+2024-09-11T17:21:31.808+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-030', ID пользователя: '1'
+2024-09-11T17:21:31.808+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.883+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53632 успешно сохранён.
+2024-09-11T17:21:31.883+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-031', ID пользователя: '1'
+2024-09-11T17:21:31.883+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:31.957+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53633 успешно сохранён.
+2024-09-11T17:21:31.957+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-032', ID пользователя: '1'
+2024-09-11T17:21:31.958+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:32.041+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53634 успешно сохранён.
+2024-09-11T17:21:32.041+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-033', ID пользователя: '1'
+2024-09-11T17:21:32.041+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:32.112+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53635 успешно сохранён.
+2024-09-11T17:21:32.112+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-034', ID пользователя: '1'
+2024-09-11T17:21:32.112+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:32.185+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53636 успешно сохранён.
+2024-09-11T17:21:32.186+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-035', ID пользователя: '1'
+2024-09-11T17:21:32.186+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация сертификатов.
+2024-09-11T17:21:32.266+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 0', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-036'
+2024-09-11T17:21:32.346+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 1', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-037'
+2024-09-11T17:21:32.420+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 2', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-038'
+2024-09-11T17:21:32.496+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 3', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-039'
+2024-09-11T17:21:32.569+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 4', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-040'
+2024-09-11T17:21:32.642+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 5', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-041'
+2024-09-11T17:21:32.714+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 6', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-042'
+2024-09-11T17:21:32.782+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 7', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-043'
+2024-09-11T17:21:32.847+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 8', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-044'
+2024-09-11T17:21:32.913+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 9', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-045'
+2024-09-11T17:21:32.913+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация налоговых сертификатов.
+2024-09-11T17:21:32.983+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 0', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-046'
+2024-09-11T17:21:33.057+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 1', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-047'
+2024-09-11T17:21:33.130+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 2', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-048'
+2024-09-11T17:21:33.202+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 3', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-049'
+2024-09-11T17:21:33.277+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 4', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-050'
+2024-09-11T17:21:33.357+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 5', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-051'
+2024-09-11T17:21:33.427+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 6', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-052'
+2024-09-11T17:21:33.498+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 7', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-053'
+2024-09-11T17:21:33.566+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 8', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-054'
+2024-09-11T17:21:33.634+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 9', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-055'
+2024-09-11T17:21:33.634+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов завершена.
+2024-09-11T17:21:33.721+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Начинаем генерацию документов.
+2024-09-11T17:21:33.748+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов SalaryOffset.
+2024-09-11T17:21:33.749+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-056', Сумма: '0.0'
+2024-09-11T17:21:33.749+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-057', Сумма: '1.8333333333333335'
+2024-09-11T17:21:33.749+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-058', Сумма: '3.666666666666667'
+2024-09-11T17:21:33.750+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-059', Сумма: '5.5'
+2024-09-11T17:21:33.750+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-060', Сумма: '7.333333333333334'
+2024-09-11T17:21:33.750+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-061', Сумма: '9.166666666666668'
+2024-09-11T17:21:33.751+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-062', Сумма: '11.0'
+2024-09-11T17:21:33.751+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-063', Сумма: '12.833333333333334'
+2024-09-11T17:21:33.751+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-064', Сумма: '14.666666666666668'
+2024-09-11T17:21:33.751+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-065', Сумма: '16.5'
+2024-09-11T17:21:33.752+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-066', Сумма: '18.333333333333336'
+2024-09-11T17:21:33.752+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-067', Сумма: '20.166666666666668'
+2024-09-11T17:21:33.753+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-068', Сумма: '22.0'
+2024-09-11T17:21:33.753+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-069', Сумма: '23.833333333333336'
+2024-09-11T17:21:33.753+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ SalaryOffset: Название документа: 'Зачет в зарплату', Дата создания: '2024-09-11', Номер документа: 'SO-2024-070', Сумма: '25.666666666666668'
+2024-09-11T17:21:33.753+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов VacationWithoutSalary.
+2024-09-11T17:21:33.753+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.754+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53652 успешно сохранён.
+2024-09-11T17:21:33.754+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-071', ID пользователя: '1'
+2024-09-11T17:21:33.755+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.755+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53653 успешно сохранён.
+2024-09-11T17:21:33.755+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-072', ID пользователя: '1'
+2024-09-11T17:21:33.755+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.759+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53654 успешно сохранён.
+2024-09-11T17:21:33.759+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-073', ID пользователя: '1'
+2024-09-11T17:21:33.759+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.759+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53655 успешно сохранён.
+2024-09-11T17:21:33.759+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-074', ID пользователя: '1'
+2024-09-11T17:21:33.760+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53656 успешно сохранён.
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-075', ID пользователя: '1'
+2024-09-11T17:21:33.760+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53657 успешно сохранён.
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-076', ID пользователя: '1'
+2024-09-11T17:21:33.760+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53658 успешно сохранён.
+2024-09-11T17:21:33.760+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-077', ID пользователя: '1'
+2024-09-11T17:21:33.761+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53659 успешно сохранён.
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-078', ID пользователя: '1'
+2024-09-11T17:21:33.761+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53660 успешно сохранён.
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-079', ID пользователя: '1'
+2024-09-11T17:21:33.761+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Сохранение или обновление отпуска без содержания с id: null
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithoutSalaryService     : Отпуск без содержания с id 53661 успешно сохранён.
+2024-09-11T17:21:33.761+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithoutSalary: Название документа: 'Отпуск без сохранения заработной платы', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VWS-2024-080', ID пользователя: '1'
+2024-09-11T17:21:33.761+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов VacationWithSalary.
+2024-09-11T17:21:33.762+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53662 успешно сохранён.
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-081', ID пользователя: '1'
+2024-09-11T17:21:33.762+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53663 успешно сохранён.
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-082', ID пользователя: '1'
+2024-09-11T17:21:33.762+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53664 успешно сохранён.
+2024-09-11T17:21:33.762+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-083', ID пользователя: '1'
+2024-09-11T17:21:33.763+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.763+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53665 успешно сохранён.
+2024-09-11T17:21:33.763+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-084', ID пользователя: '1'
+2024-09-11T17:21:33.763+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.764+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53666 успешно сохранён.
+2024-09-11T17:21:33.764+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-085', ID пользователя: '1'
+2024-09-11T17:21:33.764+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.764+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53667 успешно сохранён.
+2024-09-11T17:21:33.764+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-086', ID пользователя: '1'
+2024-09-11T17:21:33.765+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.765+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53668 успешно сохранён.
+2024-09-11T17:21:33.765+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-087', ID пользователя: '1'
+2024-09-11T17:21:33.765+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.765+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53669 успешно сохранён.
+2024-09-11T17:21:33.765+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-088', ID пользователя: '1'
+2024-09-11T17:21:33.765+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53670 успешно сохранён.
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-089', ID пользователя: '1'
+2024-09-11T17:21:33.766+05:00  INFO 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Сохранение или обновление отпуска с сохранением заработной платы с id: null
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.S.VacationWithSalaryService        : Отпуск с сохранением заработной платы с id 53671 успешно сохранён.
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ VacationWithSalary: Название документа: 'Оплачиваемый отпуск', Дата начала отпуска: '2024-09-11', Дата окончания отпуска: '2024-09-18', Причина: 'Personal', Статус утверждения: 'Approved', Номер документа: 'VOS-2024-090', ID пользователя: '1'
+2024-09-11T17:21:33.766+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация сертификатов.
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 0', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-091'
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 1', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-092'
+2024-09-11T17:21:33.766+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 2', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-093'
+2024-09-11T17:21:33.767+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 3', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-094'
+2024-09-11T17:21:33.767+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 4', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-095'
+2024-09-11T17:21:33.767+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 5', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-096'
+2024-09-11T17:21:33.767+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 6', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-097'
+2024-09-11T17:21:33.768+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 7', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-098'
+2024-09-11T17:21:33.768+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 8', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-099'
+2024-09-11T17:21:33.768+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ Certificate: Название сертификата: 'Certificate Name 9', Тип сертификата: 'Справка', Номер документа: 'CERT-2024-100'
+2024-09-11T17:21:33.768+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация налоговых сертификатов.
+2024-09-11T17:21:33.769+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 0', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-101'
+2024-09-11T17:21:33.769+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 1', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-102'
+2024-09-11T17:21:33.770+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 2', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-103'
+2024-09-11T17:21:33.770+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 3', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-104'
+2024-09-11T17:21:33.770+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 4', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-105'
+2024-09-11T17:21:33.770+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 5', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-106'
+2024-09-11T17:21:33.771+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 6', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-107'
+2024-09-11T17:21:33.771+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 7', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-108'
+2024-09-11T17:21:33.771+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 8', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-109'
+2024-09-11T17:21:33.772+05:00 DEBUG 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Создан документ TaxCertificate: Название сертификата: 'Certificate Name 9', Тип сертификата: '2-НДФЛ', Номер документа: 'TXCRT-2024-110'
+2024-09-11T17:21:33.772+05:00  INFO 27444 --- [main] c.e.e.Services.DocumentGeneratorService  : Генерация документов завершена.
+2024-09-11T17:21:33.891+05:00 DEBUG 27444 --- [main] c.e.e.Config.SecondaryDataSourceConfig   : Создание вторичного менеджера транзакций
+2024-09-11T17:21:33.900+05:00 DEBUG 27444 --- [main] c.e.employeeworkplace.Config.WebConfig   : Создание конфигуратора CORS
+2024-09-11T17:21:34.083+05:00  WARN 27444 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-11T17:21:34.106+05:00 DEBUG 27444 --- [main] c.e.e.Security.SecurityConfig            : Создание бина DaoAuthenticationProvider
+2024-09-11T17:21:34.126+05:00  INFO 27444 --- [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-09-11T17:21:34.127+05:00  WARN 27444 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-09-11T17:21:34.245+05:00 DEBUG 27444 --- [main] c.e.employeeworkplace.Config.WebConfig   : Настройка CORS для всех путей
+2024-09-11T17:21:34.357+05:00 DEBUG 27444 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 27 mappings in 'requestMappingHandlerMapping'
+2024-09-11T17:21:34.364+05:00 DEBUG 27444 --- [main] c.e.employeeworkplace.Config.WebConfig   : Добавление контроллеров представлений
+2024-09-11T17:21:34.480+05:00 DEBUG 27444 --- [main] c.e.employeeworkplace.Config.WebConfig   : Настройка обработчиков ресурсов
+2024-09-11T17:21:34.491+05:00 DEBUG 27444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /resources/**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-11T17:21:34.506+05:00 DEBUG 27444 --- [main] c.e.e.Security.SecurityConfig            : Начало настройки цепочки фильтров безопасности
+2024-09-11T17:21:34.534+05:00  INFO 27444 --- [main] c.e.e.Security.SecurityConfig            : Конфигурация безопасности завершена
+2024-09-11T17:21:34.566+05:00 DEBUG 27444 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, ProfileCompletionFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-09-11T17:21:34.685+05:00 DEBUG 27444 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-11T17:21:34.738+05:00 DEBUG 27444 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-11T17:21:35.021+05:00 DEBUG 27444 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : File system access not preferred: using SpringTemplateLoader
+2024-09-11T17:21:35.245+05:00  INFO 27444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-11T17:21:35.260+05:00  INFO 27444 --- [main] c.e.e.EmployeeWorkplaceApplication       : Started EmployeeWorkplaceApplication in 14.172 seconds (process running for 16.021)
+2024-09-11T17:21:37.828+05:00  INFO 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-11T17:21:37.829+05:00  INFO 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-11T17:21:37.829+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-11T17:21:37.829+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-11T17:21:37.829+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-11T17:21:37.830+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@471933e5
+2024-09-11T17:21:37.831+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@f4903ac
+2024-09-11T17:21:37.831+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-11T17:21:37.831+05:00  INFO 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-11T17:21:37.859+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-09-11T17:21:37.872+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:37.950+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/swagger-ui/index.html?continue to session
+2024-09-11T17:21:37.950+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/login
+2024-09-11T17:21:37.962+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-09-11T17:21:37.963+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-09-11T17:21:37.963+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:37.965+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-09-11T17:21:37.967+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.employeeworkplace.Controller.UserController#login(Model, HttpServletRequest)
+2024-09-11T17:21:37.985+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] c.e.e.Controller.UserController          : Отображение страницы входа
+2024-09-11T17:21:38.124+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-09-11T17:21:38.125+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.w.s.view.freemarker.FreeMarkerView   : View name [login], model {request=SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@180f4711], org.springframework.validation.BindingResult.request=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2024-09-11T17:21:38.126+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.w.s.view.freemarker.FreeMarkerView   : Rendering [login.ftlh]
+2024-09-11T17:21:38.175+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:38.415+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/HomeStyle.css
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/Background.css
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/HomeStyle.css
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/css/HomeStyle.css", parameters={}
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/Background.css
+2024-09-11T17:21:38.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:38.417+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/css/Background.css", parameters={}
+2024-09-11T17:21:38.417+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /js/MotionAndLogic.js
+2024-09-11T17:21:38.419+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /js/MotionAndLogic.js
+2024-09-11T17:21:38.419+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:38.419+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/js/MotionAndLogic.js", parameters={}
+2024-09-11T17:21:38.420+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:38.420+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:38.420+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:38.433+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:38.433+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:38.437+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:38.520+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2024-09-11T17:21:38.521+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:38.521+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/login
+2024-09-11T17:21:38.524+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-09-11T17:21:38.524+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-09-11T17:21:38.526+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-09-11T17:21:38.526+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-09-11T17:21:38.526+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.employeeworkplace.Controller.UserController#login(Model, HttpServletRequest)
+2024-09-11T17:21:38.526+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] c.e.e.Controller.UserController          : Отображение страницы входа
+2024-09-11T17:21:38.530+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-09-11T17:21:38.530+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.w.s.view.freemarker.FreeMarkerView   : View name [login], model {request=SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@3791b647], org.springframework.validation.BindingResult.request=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2024-09-11T17:21:38.530+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.w.s.view.freemarker.FreeMarkerView   : Rendering [login.ftlh]
+2024-09-11T17:21:38.531+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:42.264+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2024-09-11T17:21:42.679+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-09-11T17:21:42.679+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 4148191B84A2DC05B68595EEA1140B98
+2024-09-11T17:21:42.680+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@249ff553]
+2024-09-11T17:21:42.680+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]
+2024-09-11T17:21:42.680+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /profile/
+2024-09-11T17:21:42.686+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /profile/
+2024-09-11T17:21:42.686+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:42.686+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /profile/
+2024-09-11T17:21:42.686+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:42.776+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/profile/", parameters={}
+2024-09-11T17:21:42.776+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.employeeworkplace.Controller.UserController#profile(Model, Authentication)
+2024-09-11T17:21:42.776+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:42.863+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] c.e.e.Controller.UserController          : Отображение профиля для пользователя: admin
+2024-09-11T17:21:42.880+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-09-11T17:21:42.886+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.w.s.view.freemarker.FreeMarkerView   : View name [Profile], model {user=User(id=1, username=admin, password=$2a$10$UxWe9RT0BF8faB9LsxDm..rvHql.t.czp9akEu5j6Ld61z/Hd4WJK, fullName=Admin User, gender=MALE, position=admin, birthDate=2000-01-01, email=admin@admin.ru, phoneNumber=3333333333, profilePhoto=, role=user), genders=[MALE, FEMALE], userRoles=user, org.springframework.validation.BindingResult.user=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+2024-09-11T17:21:42.886+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.w.s.view.freemarker.FreeMarkerView   : Rendering [Profile.ftlh]
+2024-09-11T17:21:42.929+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:42.984+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/Background.css
+2024-09-11T17:21:42.984+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /js/MotionAndLogic.js
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/Background.css
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/AvatarMan.jpg
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /js/MotionAndLogic.js
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:42.986+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/AvatarMan.jpg
+2024-09-11T17:21:42.987+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:42.987+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:43.128+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/images/AvatarMan.jpg", parameters={}
+2024-09-11T17:21:43.129+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:43.136+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:43.144+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/css/Background.css", parameters={}
+2024-09-11T17:21:43.144+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:43.148+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:43.163+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/js/MotionAndLogic.js", parameters={}
+2024-09-11T17:21:43.166+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:43.168+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:43.310+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2024-09-11T17:21:43.311+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:43.311+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2024-09-11T17:21:43.311+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:43.401+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-09-11T17:21:43.403+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [static/], ServletContext [/]]
+2024-09-11T17:21:43.405+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-09-11T17:21:43.406+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.employeeworkplace.Exceptions.GlobalExceptionHandler#handleGeneralException(Exception, Model)
+2024-09-11T17:21:43.406+05:00 ERROR 27444 --- [http-nio-0.0.0.0-8080-exec-3] c.e.e.Exceptions.GlobalExceptionHandler  : Неизвестная ошибка: No static resource favicon.ico.
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at com.example.employeeworkplace.Security.ProfileCompletionFilter.doFilter(ProfileCompletionFilter.java:50) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at com.example.employeeworkplace.Security.ProfileCompletionFilter.doFilter(ProfileCompletionFilter.java:50) ~[classes/:na]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-09-11T17:21:43.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.] to ModelAndView [view="error"; model={errorMessage=Внутренняя ошибка сервера: No static resource favicon.ico.}]
+2024-09-11T17:21:43.416+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Using resolved error view: ModelAndView [view="error"; model={errorMessage=Внутренняя ошибка сервера: No static resource favicon.ico.}]
+2024-09-11T17:21:43.422+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-09-11T17:21:43.422+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.view.freemarker.FreeMarkerView   : View name [error], model {errorMessage=Внутренняя ошибка сервера: No static resource favicon.ico.}
+2024-09-11T17:21:43.422+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.w.s.view.freemarker.FreeMarkerView   : Rendering [error.ftlh]
+2024-09-11T17:21:43.423+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.022+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.html
+2024-09-11T17:21:45.023+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.023+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.html
+2024-09-11T17:21:45.024+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.121+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-09-11T17:21:45.122+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.136+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.183+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui.css
+2024-09-11T17:21:45.183+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.183+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui.css
+2024-09-11T17:21:45.184+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.185+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/index.css
+2024-09-11T17:21:45.186+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.187+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/index.css
+2024-09-11T17:21:45.187+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.188+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-bundle.js
+2024-09-11T17:21:45.189+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.189+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-bundle.js
+2024-09-11T17:21:45.189+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.195+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-ui-standalone-preset.js
+2024-09-11T17:21:45.195+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.195+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-ui-standalone-preset.js
+2024-09-11T17:21:45.195+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.197+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/swagger-initializer.js
+2024-09-11T17:21:45.198+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.198+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/swagger-initializer.js
+2024-09-11T17:21:45.198+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.418+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-11T17:21:45.419+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.435+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-11T17:21:45.436+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.442+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-11T17:21:45.443+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.446+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-11T17:21:45.447+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.454+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.469+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-11T17:21:45.470+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.473+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.477+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.477+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.513+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.769+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs/swagger-config
+2024-09-11T17:21:45.770+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.770+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs/swagger-config
+2024-09-11T17:21:45.770+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.772+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /swagger-ui/favicon-32x32.png
+2024-09-11T17:21:45.773+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.773+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /swagger-ui/favicon-32x32.png
+2024-09-11T17:21:45.773+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:45.868+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-11T17:21:45.869+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-11T17:21:45.869+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-11T17:21:45.870+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-11T17:21:45.872+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-11T17:21:45.872+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.876+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8080/swagger-ui/oauth2-re (truncated)...]
+2024-09-11T17:21:45.883+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-11T17:21:45.910+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /v3/api-docs
+2024-09-11T17:21:45.910+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.employeeworkplace.Security.CustomUserDetails@83bdde4, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=4148191B84A2DC05B68595EEA1140B98], Granted Authorities=[ROLE_user]]]
+2024-09-11T17:21:45.910+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /v3/api-docs
+2024-09-11T17:21:45.911+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] c.e.e.Services.UserService               : Поиск пользователя по имени пользователя: admin
+2024-09-11T17:21:46.008+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-11T17:21:46.008+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-11T17:21:46.417+05:00  INFO 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 400 ms
+2024-09-11T17:21:46.439+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-11T17:21:46.441+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-11T17:21:46.442+05:00 DEBUG 27444 --- [http-nio-0.0.0.0-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

@@ -35,7 +35,7 @@ public class SalaryOffsetController {
 
         SalaryOffset salaryOffset = salaryOffsetService.getSalaryOffsetById(id);
         if (salaryOffset != null) {
-            // Пример использования UserClientService
+
             User user = userClientService.getUserById(salaryOffset.getUserId());
             if (user != null) {
                 salaryOffset.setUserId(user.getId());
