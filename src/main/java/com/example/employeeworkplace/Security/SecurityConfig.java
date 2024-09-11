@@ -40,9 +40,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/admin/**").hasRole("admin")
-                        .requestMatchers("/profile/**", "/swagger-ui.html", "/v3/api-docs/**").authenticated()
+                        .requestMatchers("/profile/**", "/swagger-ui.html", "/v3/api-docs/**","/api/user/**").authenticated()
                         .requestMatchers("/register", "/login", "/public/**", "/css/**", "/js/**", "/images/**", "/users/**").permitAll()
-                        .requestMatchers("/users/**").hasRole("user")
+//                        .requestMatchers().hasRole("user")
+                        .requestMatchers("/api/documents/**","api/users/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(formLogin -> formLogin
@@ -106,8 +107,8 @@ public class SecurityConfig {
     public DaoAuthenticationProvider authenticationProvider(CustomUserDetailsService customUserDetailsService) {
         log.debug("Создание бина DaoAuthenticationProvider");
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(customUserDetailsService); // Ваш UserDetailsService
-        authProvider.setPasswordEncoder(passwordEncoder()); // Ваш BCryptPasswordEncoder
+        authProvider.setUserDetailsService(customUserDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
 }

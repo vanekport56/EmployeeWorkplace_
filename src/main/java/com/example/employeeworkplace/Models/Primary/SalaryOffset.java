@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.math.BigDecimal;
+
 /**
  * Сущность для представления документа "Salary Offset".
  *
@@ -30,5 +32,5 @@ public class SalaryOffset extends Document {
      * Сумма денег, указанная в документе зарплаты.
      */
     @Column(name = "sum_of_money")
-    private Double sumOfMoney;
+    private BigDecimal sumOfMoney;
 }

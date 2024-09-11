@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * <p>Этот класс расширяет {@link Document} и представляет собой общую документацию по отпуску с полями для даты начала и окончания отпуска, причины, статуса одобрения и информации о зарплате.</p>
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+
 @DiscriminatorColumn(name = "VacationType")
 @Data
 public abstract class VacationDocumentation extends Document {
@@ -20,7 +20,7 @@ public abstract class VacationDocumentation extends Document {
      * Уникальный идентификатор документа.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "vacation_with_salary_seq")
     @Column(name = "Id")
     private Long id;
 

@@ -53,16 +53,27 @@ public class VacationController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "desc") String sortDirection,
-            Model model, Authentication authentication) {
-        User currentUser = userService.getUserByUsername(authentication.getName());
+            Model model, Authentication authentication, User currentUser) {
+        Long idcurrentUser = vacationDocumentationService.getCurrentUserId();
+
         List<VacationDocumentation> vacationDocuments = vacationDocumentationService.filterByCurrentUser(
-                vacationDocumentationService.findAllWithUserDetails(), currentUser);
+                vacationDocumentationService.findAllWithUserDetails(), idcurrentUser);
+        if (vacationDocuments != null && !vacationDocuments.isEmpty()) {
+            logger.info("Количество документов отпуска для текущего пользователя: {}", vacationDocuments.size());
+            for (VacationDocumentation doc : vacationDocuments) {
+                logger.debug("Документ отпуска: {}", doc);
+            }
+        } else {
+            logger.info("Не найдено документов отпуска для текущего пользователя.");
+        }
+
+//        vacationDocuments = vacationDocumentationService.findAllWithUserDetails();
 
         Cache cache = cacheManager.getCache("vacationDocuments");
         if (cache != null && cache.get(vacationDocuments) != null) {
-            logger.info("Получение списка документов по отпуску из кэша для пользователя с id: {}", currentUser.getId());
+            logger.info("Получение списка документов по отпуску из кэша для пользователя с id: {}",idcurrentUser);
         } else {
-            logger.info("Получение списка документов по отпуску с сервера для пользователя с id: {}", currentUser.getId());
+            logger.info("Получение списка документов по отпуску с сервера для пользователя с id: {}", idcurrentUser);
         }
 
         List<VacationDocumentation> formattedVacationDocuments = vacationDocuments.stream()
@@ -93,13 +104,19 @@ public class VacationController {
         int totalPages = (int) Math.ceil((double) sortedVacationDocuments.size() / size);
 
         boolean hasMoreData = (page + 1) * size < sortedVacationDocuments.size();
-        model.addAttribute("userRoles", currentUser.getRole());
+
+
+
+        String role  = String.valueOf(vacationDocumentationService.getCurrentUserRole());
+        logger.info("Роль текущего пользователя: {}", role);
+        model.addAttribute("userRoles", role);
         model.addAttribute("hasMoreData", hasMoreData);
         model.addAttribute("vacationDocuments", paginatedDocuments);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("size", size);
         model.addAttribute("sortDirection", sortDirection);
+
 
         return "Vacation";
     }

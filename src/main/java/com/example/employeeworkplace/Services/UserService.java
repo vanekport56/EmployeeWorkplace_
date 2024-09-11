@@ -1,7 +1,9 @@
 package com.example.employeeworkplace.Services;
 
+import com.example.employeeworkplace.Dto.UserDTO;
 import com.example.employeeworkplace.Exceptions.EmailAlreadyExistsException;
 import com.example.employeeworkplace.Exceptions.UsernameAlreadyExistsException;
+import com.example.employeeworkplace.Mapper.UserMapper;
 import com.example.employeeworkplace.Models.Secondary.Role;
 import com.example.employeeworkplace.Models.Secondary.User;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
@@ -29,6 +31,7 @@ public class UserService implements UserDetailsService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final RestTemplate restTemplate;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+    private final UserMapper userMapper;
 
     /**
      * Получает пользователя по его ID.
@@ -36,18 +39,19 @@ public class UserService implements UserDetailsService {
      * @param userId идентификатор пользователя
      * @return объект User, если пользователь найден
      */
-    public User getUserById(Long userId) {
+    public UserDTO getUserDTOById(Long userId) {
         logger.debug("Запрос пользователя с ID: {}", userId);
-        String url = "http://localhost:8080/users/" + userId;
-        User user = restTemplate.getForObject(url, User.class);
+        User user = userRepository.findById(userId).orElse(null);
         if (user != null) {
             logger.debug("Получен пользователь: {}", user);
+            UserDTO userDTO = userMapper.userToUserDTO(user);
+            logger.debug("Преобразованный UserDTO: {}", userDTO);
+            return userDTO;
         } else {
             logger.debug("Пользователь с ID {} не найден", userId);
+            return null;
         }
-        return user;
     }
-
 
     /**
      * Получает пользователя по его имени пользователя.
