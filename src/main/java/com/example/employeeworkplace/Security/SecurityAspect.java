@@ -65,7 +65,7 @@ public class SecurityAspect {
      * @return {@code true}, если у пользователя есть доступ, {@code false} в противном случае
      */
     private boolean hasPermission(User currentUser) {
-        boolean hasPermission = currentUser.getRole().equals("ROLE_" + Role.admin); // Замените Role.admin на соответствующее значение из вашего перечисления
+        boolean hasPermission = currentUser.getRole().equals("ROLE_" + Role.admin);
 
         if (!hasPermission) {
             log.debug("Пользователь {} не имеет необходимого доступа. Требуется роль: ROLE_{}", currentUser.getUsername(), Role.admin);

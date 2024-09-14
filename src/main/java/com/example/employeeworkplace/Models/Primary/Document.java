@@ -25,7 +25,7 @@ public abstract class Document {
      * Уникальный идентификатор документа.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
 
@@ -61,10 +61,11 @@ public abstract class Document {
     @Column(name = "user_id")
     private Long userId;
 
-    /**
-     * Пользователь, связанный с документом.
-     * Это поле не сохраняется в базе данных.
-     */
+
     @Transient
     private User transientUser;
+
+
+    @Transient
+    private String userFullName;
 }

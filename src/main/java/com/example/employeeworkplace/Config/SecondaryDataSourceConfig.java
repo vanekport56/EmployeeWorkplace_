@@ -2,6 +2,7 @@ package com.example.employeeworkplace.Config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +18,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Конфигурация вторичного источника данных и JPA.
- * <p>
- * Настраивает подключение к вторичной базе данных и конфигурацию JPA для управления сущностями.
- * </p>
+ * Конфигурационный класс для настройки вторичного источника данных, EntityManagerFactory
+ * и менеджера транзакций для работы с вторичной базой данных.
  */
 @Configuration
 @EnableTransactionManagement
@@ -33,39 +32,44 @@ public class SecondaryDataSourceConfig {
 
     private static final Logger log = LoggerFactory.getLogger(SecondaryDataSourceConfig.class);
 
+    @Value("${spring.datasource.secondary.url}")
+    private String url;
+
+    @Value("${spring.datasource.secondary.username}")
+    private String username;
+
+    @Value("${spring.datasource.secondary.password}")
+    private String password;
+
+    @Value("${spring.datasource.secondary.driver-class-name}")
+    private String driverClassName;
+
     /**
-     * Настраивает источник данных для вторичной базы данных PostgreSQL.
-     * <p>
-     * Использует {@link DriverManagerDataSource} с указанными параметрами подключения.
-     * </p>
+     * Создает и настраивает вторичный источник данных для подключения к дополнительной базе данных.
      *
-     * @return Экземпляр {@link DataSource}
+     * @return источник данных для вторичной базы данных
      */
     @Bean(name = "secondaryDataSource")
     public DataSource secondaryDataSource() {
-        log.debug("Создание вторичного источника данных");
+        log.debug("Создание вторичного источника данных с URL: {}", url);
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/U");
-        dataSource.setUsername("root");
-        dataSource.setPassword("12345678");
-
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
     /**
-     * Настраивает фабрику {@link LocalContainerEntityManagerFactoryBean} для вторичной базы данных.
-     * <p>
-     * Конфигурирует {@link LocalContainerEntityManagerFactoryBean} для работы с Hibernate.
-     * </p>
+     * Создает и настраивает фабрику EntityManager для работы с сущностями вторичной базы данных.
      *
-     * @param dataSource Источник данных для фабрики
-     * @return Настроенный экземпляр {@link LocalContainerEntityManagerFactoryBean}
+     * @param dataSource источник данных, который будет использоваться фабрикой EntityManager
+     * @return фабрика EntityManager для вторичной базы данных
      */
     @Bean(name = "secondaryEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean secondaryEntityManagerFactory(
             @Qualifier("secondaryDataSource") DataSource dataSource) {
-        log.debug("Создание вторичной фабрики EntityManager");
+        log.debug("Создание вторичной фабрики EntityManager для пакета com.example.employeeworkplace.Models.Secondary");
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource);
         entityManager.setPackagesToScan("com.example.employeeworkplace.Models.Secondary");
@@ -76,18 +80,16 @@ public class SecondaryDataSourceConfig {
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         entityManager.setJpaProperties(properties);
 
+        log.debug("Настройки Hibernate для вторичной базы данных: {}", properties);
+
         return entityManager;
     }
 
     /**
-     * Настраивает менеджер транзакций {@link JpaTransactionManager}.
-     * <p>
-     * Использует {@link LocalContainerEntityManagerFactoryBean} для управления транзакциями.
-     * </p>
+     * Создает и настраивает менеджер транзакций для работы с вторичной базой данных.
      *
-     * @param entityManagerFactory Фабрика EntityManager для управления транзакциями
-     * @return Экземпляр {@link PlatformTransactionManager}
-     * @throws IllegalStateException Если фабрика {@link LocalContainerEntityManagerFactoryBean} не инициализирована
+     * @param entityManagerFactory фабрика EntityManager, с которой будет работать менеджер транзакций
+     * @return менеджер транзакций для вторичной базы данных
      */
     @Bean(name = "secondaryTransactionManager")
     public PlatformTransactionManager secondaryTransactionManager(
@@ -95,6 +97,7 @@ public class SecondaryDataSourceConfig {
         log.debug("Создание вторичного менеджера транзакций");
 
         if (entityManagerFactory.getObject() == null) {
+            log.error("EntityManagerFactory не инициализирован");
             throw new IllegalStateException("EntityManagerFactory не инициализирован");
         }
 

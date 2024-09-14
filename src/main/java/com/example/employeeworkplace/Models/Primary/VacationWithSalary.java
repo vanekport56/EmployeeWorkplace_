@@ -1,9 +1,7 @@
 package com.example.employeeworkplace.Models.Primary;
 
 import com.example.employeeworkplace.Models.ConstantsDocuments;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  * Класс представляет документацию по отпуску с сохранением зарплаты.
@@ -14,8 +12,9 @@ import jakarta.persistence.Table;
 @Entity
 @DiscriminatorValue("WITH_SALARY")
 @Table(name = "vacation_with_salary")
-public class VacationWithSalary extends VacationDocumentation {
 
+public class VacationWithSalary extends VacationDocumentation {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "vacation_with_salary_seq")
     /**
      * Устанавливает имя документа для отпуска с сохранением зарплаты.
      *
