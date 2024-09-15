@@ -45,6 +45,23 @@ public class UserServiceIntegrationTest {
 
         assertThat(loadedUser).isNotNull();
         assertThat(passwordEncoder.matches("password", loadedUser.getPassword())).isTrue();
+        assertThat(loadedUser.getRole()).isEqualTo(Role.user);
+    }
+
+    @Test
+    public void testSaveAndLoadAdmin() {
+        User admin = new User();
+        admin.setUsername("adminuser");
+        admin.setEmail("adminuser@example.com");
+        admin.setPassword("adminpassword");
+
+        userService.saveNewAdminUser(admin);
+
+        User loadedAdmin = userRepository.findByUsername("adminuser").orElse(null);
+
+        assertThat(loadedAdmin).isNotNull();
+        assertThat(passwordEncoder.matches("adminpassword", loadedAdmin.getPassword())).isTrue();
+        assertThat(loadedAdmin.getRole()).isEqualTo(Role.admin);
     }
 
     @Test

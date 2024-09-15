@@ -7,6 +7,7 @@ import com.example.employeeworkplace.Mapper.UserMapper;
 import com.example.employeeworkplace.Models.Secondary.Role;
 import com.example.employeeworkplace.Models.Secondary.User;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
+import com.example.employeeworkplace.Security.Secured;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,6 +94,25 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
         logger.info("Новый пользователь с именем {} был создан", user.getUsername());
     }
+    public void saveNewAdminUser(User user) {
+        logger.debug("Сохранение нового пользователя: {}", user);
+
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            logger.error("Имя пользователя уже существует: {}", user.getUsername());
+            throw new UsernameAlreadyExistsException("Указанный логин занят: " + user.getUsername());
+        }
+
+        if (user.getEmail() != null && userRepository.findByEmail(user.getEmail()).isPresent()) {
+            logger.error("Электронная почта уже используется: {}", user.getEmail());
+            throw new EmailAlreadyExistsException("Электронная почта уже используется: " + user.getEmail());
+        }
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole(Role.admin);
+
+        userRepository.save(user);
+        logger.info("Новый пользователь с именем {} был создан", user.getUsername());
+    }
 
     /**
      * Загружает пользователя для аутентификации по его имени пользователя.
@@ -169,5 +189,12 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
 
         return true;
+    }
+    @Secured("admin")
+    public void deleteUser(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("Пользователь с именем " + username + " не найден"));
+        userRepository.delete(user);
+        logger.info("Пользователь с именем {} был удалён", username);
     }
 }
