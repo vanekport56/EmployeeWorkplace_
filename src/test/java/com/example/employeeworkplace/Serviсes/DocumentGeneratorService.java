@@ -1,12 +1,12 @@
 package com.example.employeeworkplace.Serviсes;
 
-import com.example.employeeworkplace.Models.ConstantsOrderedDocuments;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.ConstantsOrderedDocuments;
 import com.example.employeeworkplace.Models.Primary.*;
 import com.example.employeeworkplace.Repositories.Primary.*;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
-import com.example.employeeworkplace.Services.VacationWithSalaryService;
-import com.example.employeeworkplace.Services.VacationWithoutSalaryService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
+import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import jakarta.annotation.PostConstruct;
 import org.junit.jupiter.api.Disabled;
 import org.slf4j.Logger;
@@ -218,7 +218,7 @@ public class DocumentGeneratorService {
             logger.debug("Создан документ Certificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
                     certificate.getNameOfTheCertificate(),
                     certificate.getTypeOfTheCertificate(),
-                    certificate.getDocumentNumber());
+                    certificate.getCertificateNumber());
         }
     }
     @Transactional
@@ -237,7 +237,7 @@ public class DocumentGeneratorService {
             logger.debug("Создан документ TaxCertificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
                     taxCertificate.getNameOfTheCertificate(),
                     taxCertificate.getTypeOfTheCertificate(),
-                    taxCertificate.getDocumentNumber());
+                    taxCertificate.getCertificateNumber());
         }
     }
 

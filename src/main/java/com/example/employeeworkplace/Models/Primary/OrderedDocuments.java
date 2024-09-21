@@ -53,7 +53,7 @@ public abstract class OrderedDocuments {
      * Должен быть уникальным.
      */
     @Column(name = "certificate_Number", unique = true)
-    private String documentNumber;
+    private String certificateNumber;
 
     /**
      * Идентификатор пользователя, связанного с документом.

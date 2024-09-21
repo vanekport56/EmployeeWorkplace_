@@ -1,5 +1,7 @@
 package com.example.employeeworkplace.Models.Secondary;
 
+import com.example.employeeworkplace.Models.ConstantsAndEnums.Gender;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

@@ -3,7 +3,7 @@ package com.example.employeeworkplace.Serviсes;
 import com.example.employeeworkplace.Models.Primary.SalaryOffset;
 import com.example.employeeworkplace.Models.Secondary.User;
 import com.example.employeeworkplace.Repositories.Primary.SalaryOffsetRepository;
-import com.example.employeeworkplace.Services.SalaryOffsetService;
+import com.example.employeeworkplace.Services.SalaryAndCertificateService.SalaryOffsetService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

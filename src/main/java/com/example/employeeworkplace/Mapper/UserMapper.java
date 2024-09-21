@@ -3,10 +3,7 @@ package com.example.employeeworkplace.Mapper;
 import com.example.employeeworkplace.Dto.UserDTO;
 import com.example.employeeworkplace.Models.Secondary.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
-
-//Еще не реализовано
 /**
  * Mapper для преобразования между {@link User} и {@link UserDTO}.
  *
@@ -14,11 +11,6 @@ import org.mapstruct.factory.Mappers;
  */
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-
-    /**
-     * Экземпляр {@link UserMapper}.
-     */
-    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
     /**
      * Преобразует объект {@link User} в {@link UserDTO}.

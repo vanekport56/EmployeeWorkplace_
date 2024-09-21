@@ -2,7 +2,7 @@ package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.Primary.FileEntity;
 import com.example.employeeworkplace.Repositories.Primary.FileRepository;
-import com.example.employeeworkplace.Services.FileConsumerService;
+import com.example.employeeworkplace.Services.FileServices.FileConsumerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.BeforeEach;

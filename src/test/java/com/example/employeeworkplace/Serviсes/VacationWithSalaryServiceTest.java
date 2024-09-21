@@ -2,8 +2,8 @@ package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.Primary.VacationWithSalary;
 import com.example.employeeworkplace.Repositories.Primary.VacationWithSalaryRepository;
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
-import com.example.employeeworkplace.Services.VacationWithSalaryService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

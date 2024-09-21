@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -19,7 +20,7 @@ import java.sql.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class Document {
+public abstract class Document implements Serializable {
 
     /**
      * Уникальный идентификатор документа.

@@ -1,6 +1,6 @@
 package com.example.employeeworkplace.Serviсes;
 
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ import java.time.Year;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Интеграционные тесты для сервиса генерации номеров документов {@link com.example.employeeworkplace.Services.DocumentNumberGeneratorService}.
+ * Интеграционные тесты для сервиса генерации номеров документов {@link DocumentNumberGeneratorService}.
  * Проверяют функциональность генерации и сброса счетчика номеров документов.
  */
 @SpringBootTest

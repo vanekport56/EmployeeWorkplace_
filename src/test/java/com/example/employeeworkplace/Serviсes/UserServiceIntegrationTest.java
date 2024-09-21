@@ -1,9 +1,9 @@
 package com.example.employeeworkplace.Serviсes;
 
-import com.example.employeeworkplace.Models.Secondary.Role;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.Role;
 import com.example.employeeworkplace.Models.Secondary.User;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
-import com.example.employeeworkplace.Services.UserService;
+import com.example.employeeworkplace.Services.UserServices.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.Primary.SalaryOffset;
 import com.example.employeeworkplace.Repositories.Primary.SalaryOffsetRepository;
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

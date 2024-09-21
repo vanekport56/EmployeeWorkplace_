@@ -1,6 +1,6 @@
 package com.example.employeeworkplace.Models.Primary;
 
-import com.example.employeeworkplace.Models.ConstantsDocuments;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.ConstantsDocuments;
 import jakarta.persistence.*;
 
 /**
@@ -14,13 +14,14 @@ import jakarta.persistence.*;
 @Table(name = "vacation_with_salary")
 
 public class VacationWithSalary extends VacationDocumentation {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "vacation_with_salary_seq")
     /**
      * Устанавливает имя документа для отпуска с сохранением зарплаты.
      *
      * @param nameOfTheDocument имя документа
      */
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "vacation_with_salary_seq")
     @Override
+
     public void setNameOfTheDocument(String nameOfTheDocument) {
         super.setNameOfTheDocument(ConstantsDocuments.VacationWithSalary);
     }

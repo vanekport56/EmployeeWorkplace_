@@ -1,6 +1,6 @@
 package com.example.employeeworkplace.Models.Primary;
 
-import com.example.employeeworkplace.Models.ConstantsDocuments;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.ConstantsDocuments;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

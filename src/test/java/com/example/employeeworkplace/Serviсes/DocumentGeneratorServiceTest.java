@@ -2,9 +2,9 @@ package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Repositories.Primary.*;
 import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
-import com.example.employeeworkplace.Services.VacationWithSalaryService;
-import com.example.employeeworkplace.Services.VacationWithoutSalaryService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
+import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

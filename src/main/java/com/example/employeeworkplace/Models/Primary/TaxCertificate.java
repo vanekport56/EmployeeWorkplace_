@@ -1,6 +1,6 @@
 package com.example.employeeworkplace.Models.Primary;
 
-import com.example.employeeworkplace.Models.ConstantsOrderedDocuments;
+import com.example.employeeworkplace.Models.ConstantsAndEnums.ConstantsOrderedDocuments;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

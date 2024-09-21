@@ -2,7 +2,7 @@ package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.Primary.TaxCertificate;
 import com.example.employeeworkplace.Repositories.Primary.TaxCertificateRepository;
-import com.example.employeeworkplace.Services.DocumentNumberGeneratorService;
+import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

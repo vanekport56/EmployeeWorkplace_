@@ -1,6 +1,6 @@
     package com.example.employeeworkplace.Models.Primary;
 
-    import com.example.employeeworkplace.Models.ConstantsDocuments;
+    import com.example.employeeworkplace.Models.ConstantsAndEnums.ConstantsDocuments;
     import jakarta.persistence.*;
     import lombok.Data;
     import lombok.EqualsAndHashCode;
