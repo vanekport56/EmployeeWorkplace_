@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Заполните данные профиля</title>
+    <link rel="stylesheet" type="text/css" href="/css/HomeStyle.css">
     <style>
 
         body, html {
@@ -26,15 +27,15 @@
 
 
         .page {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
             box-sizing: border-box;
-            position: relative;
             z-index: 1;
+            position: relative;
         }
 
         h1 {

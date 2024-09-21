@@ -281,9 +281,7 @@
 <div class="page">
     <header>
         <ul class="navbar">
-            <#if userRoles == "admin">
-                <li class="dropdown"><a href="/admin/dashboard">Администрирование</a></li>
-            </#if>
+
 
             <li class="dropdown"><a href="/vacation/">Отпуск</a></li>
             <li class="dropdown"><a href="/salary/">Зарплата</a></li>
