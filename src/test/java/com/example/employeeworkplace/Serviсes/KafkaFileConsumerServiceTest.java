@@ -6,7 +6,6 @@ import com.example.employeeworkplace.Services.FileConsumerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,12 +36,11 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * </ol>
  */
 @SpringBootTest
-@Disabled
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class FileConsumerServiceTest {
+public class KafkaFileConsumerServiceTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(FileConsumerServiceTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(KafkaFileConsumerServiceTest.class);
 
     @Autowired
     private FileRepository fileRepository;

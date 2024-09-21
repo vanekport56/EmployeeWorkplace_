@@ -8,14 +8,8 @@ import org.springframework.kafka.annotation.EnableKafka;
 @SpringBootApplication
 @EnableCaching
 @EnableKafka
-
 public class EmployeeWorkplaceApplication {
-
-
-//    }
-
     public static void main(String[] args) {
         SpringApplication.run(EmployeeWorkplaceApplication.class, args);
     }
-
 }

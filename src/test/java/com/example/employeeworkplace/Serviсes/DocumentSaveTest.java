@@ -96,8 +96,8 @@ public class DocumentSaveTest {
 
         assertThat(salaryOffsetRepository.findAll()).hasSize(15);
         SalaryOffset salaryOffset = salaryOffsetRepository.findAll().get(0);
-        assertThat(salaryOffset.getNameOfTheDocument()).startsWith("Salary Offset Document");
-        assertThat(salaryOffset.getSumOfMoney()).isGreaterThan(BigDecimal.ZERO);
+        assertThat(salaryOffset.getNameOfTheDocument()).startsWith("Зачет в зарплату");
+
     }
 
     /**

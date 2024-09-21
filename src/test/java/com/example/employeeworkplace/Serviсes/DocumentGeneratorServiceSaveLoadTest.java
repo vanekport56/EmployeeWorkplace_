@@ -84,7 +84,7 @@ public class DocumentGeneratorServiceSaveLoadTest {
         SalaryOffset loadedSalaryOffset = salaryOffsetRepository.findById(salaryOffset.getId()).orElse(null);
 
         assertThat(loadedSalaryOffset).isNotNull();
-        assertThat(loadedSalaryOffset.getNameOfTheDocument()).isEqualTo("Test Salary Offset");
+        assertThat(loadedSalaryOffset.getNameOfTheDocument()).isEqualTo("Зачет в зарплату");
         assertThat(loadedSalaryOffset.getOfficialPosition()).isEqualTo("Test Position");
         assertThat(loadedSalaryOffset.getSumOfMoney()).isEqualByComparingTo(BigDecimal.valueOf(1000.00));
     }
