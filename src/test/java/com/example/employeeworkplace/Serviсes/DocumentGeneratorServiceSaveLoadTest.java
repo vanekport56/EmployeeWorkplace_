@@ -152,7 +152,7 @@ public class DocumentGeneratorServiceSaveLoadTest {
         certificate.setNameOfTheCertificate("Test Certificate");
         certificate.setTypeOfTheCertificate(ConstantsOrderedDocuments.Certificate);
         certificate.setDateOfCreation(Date.valueOf(LocalDate.now()));
-        certificate.setDocumentNumber("C123");
+        certificate.setCertificateNumber("C123");
 
         certificateRepository.save(certificate);
 
@@ -176,7 +176,7 @@ public class DocumentGeneratorServiceSaveLoadTest {
         taxCertificate.setNameOfTheCertificate("Test Tax Certificate");
         taxCertificate.setTypeOfTheCertificate(ConstantsOrderedDocuments.TaxCertificate);
         taxCertificate.setDateOfCreation(Date.valueOf(LocalDate.now()));
-        taxCertificate.setDocumentNumber("TC123");
+        taxCertificate.setCertificateNumber("TC123");
 
         taxCertificateRepository.save(taxCertificate);
 

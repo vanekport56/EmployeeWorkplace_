@@ -16,6 +16,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 /**
  * Сервис для управления пользователями и их аутентификации.
@@ -133,13 +135,19 @@ public class UserService implements UserDetailsService {
      */
     public boolean isProfileIncomplete(String username) {
         User user = getUserByUsername(username);
-        return user.getFullName() == null || user.getFullName().isEmpty() ||
-                user.getPosition() == null || user.getPosition().isEmpty() ||
-                user.getGender() == null ||
-                user.getBirthDate() == null ||
-                user.getEmail() == null || user.getEmail().isEmpty() ||
-                user.getPhoneNumber() == null || user.getPhoneNumber().isEmpty() ||
-                user.getProfilePhoto() == null;
+
+        return Stream.of(
+                        user.getFullName(),
+                        user.getPosition(),
+                        user.getGender(),
+                        user.getBirthDate(),
+                        user.getEmail(),
+                        user.getPhoneNumber(),
+                        user.getProfilePhoto()
+                )
+                .anyMatch(Objects::isNull) ||
+                Stream.of(user.getFullName(), user.getPosition(), user.getEmail(), user.getPhoneNumber())
+                        .anyMatch(String::isEmpty);
     }
 
     /**

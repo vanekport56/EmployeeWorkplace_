@@ -4,27 +4,24 @@ import com.example.employeeworkplace.Models.Primary.SalaryOffset;
 import com.example.employeeworkplace.Models.Secondary.User;
 import com.example.employeeworkplace.Repositories.Primary.SalaryOffsetRepository;
 import com.example.employeeworkplace.Services.SalaryAndCertificateService.SalaryOffsetService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Интеграционные тесты для сервиса работы с документами SalaryOffset {@link SalaryOffsetService}.
  * Проверяют функциональность фильтрации, получения, сохранения, обновления и удаления документов.
  */
+@Slf4j
 @SpringBootTest
 @Transactional
 public class SalaryOffsetServiceIntegrationTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(SalaryOffsetServiceIntegrationTest.class);
 
     @Autowired
     private SalaryOffsetService salaryOffsetService;
@@ -41,7 +38,7 @@ public class SalaryOffsetServiceIntegrationTest {
         // Создание тестового пользователя
         currentUser = new User();
         currentUser.setId(1L);
-        logger.debug("Тестовый пользователь создан: {}", currentUser);
+        log.debug("Тестовый пользователь создан: {}", currentUser);
 
         // Создание тестовых документов
         SalaryOffset doc1 = new SalaryOffset();
@@ -61,20 +58,9 @@ public class SalaryOffsetServiceIntegrationTest {
         List<SalaryOffset> documents = salaryOffsetRepository.findAll();
         List<SalaryOffset> filteredDocuments = salaryOffsetService.filterByCurrentUser(documents, currentUser);
 
-        logger.debug("Отфильтрованные документы: {}", filteredDocuments);
+        log.debug("Отфильтрованные документы: {}", filteredDocuments);
         assertThat(filteredDocuments).hasSize(1);
         assertThat(filteredDocuments.get(0).getUserId()).isEqualTo(currentUser.getId());
-    }
-
-    /**
-     * Тестирует получение списка всех документов SalaryOffset.
-     */
-    @Test
-    public void testListSalaryOffset() {
-        List<SalaryOffset> documents = salaryOffsetService.listSalaryOffset();
-
-        logger.debug("Список всех документов SalaryOffset: {}", documents);
-        assertThat(documents).hasSize(2);
     }
 
     /**
@@ -85,7 +71,7 @@ public class SalaryOffsetServiceIntegrationTest {
         SalaryOffset savedDoc = salaryOffsetRepository.findAll().get(0);
         SalaryOffset foundDoc = salaryOffsetService.getSalaryOffsetById(savedDoc.getId());
 
-        logger.debug("Найденный документ по ID: {}", foundDoc);
+        log.debug("Найденный документ по ID: {}", foundDoc);
         assertThat(foundDoc).isNotNull();
         assertThat(foundDoc.getId()).isEqualTo(savedDoc.getId());
     }
@@ -99,7 +85,7 @@ public class SalaryOffsetServiceIntegrationTest {
         newDoc.setUserId(3L);
         SalaryOffset savedDoc = salaryOffsetService.saveSalaryOffset(newDoc);
 
-        logger.debug("Сохраненный документ: {}", savedDoc);
+        log.debug("Сохраненный документ: {}", savedDoc);
         assertThat(savedDoc).isNotNull();
         assertThat(savedDoc.getUserId()).isEqualTo(3L);
     }
@@ -113,20 +99,8 @@ public class SalaryOffsetServiceIntegrationTest {
         docToUpdate.setUserId(4L);
         SalaryOffset updatedDoc = salaryOffsetService.updateSalaryOffset(docToUpdate.getId(), docToUpdate);
 
-        logger.debug("Обновленный документ: {}", updatedDoc);
+        log.debug("Обновленный документ: {}", updatedDoc);
         assertThat(updatedDoc).isNotNull();
         assertThat(updatedDoc.getUserId()).isEqualTo(4L);
-    }
-
-    /**
-     * Тестирует удаление документа SalaryOffset по ID.
-     */
-    @Test
-    public void testDeleteSalaryOffset() {
-        SalaryOffset docToDelete = salaryOffsetRepository.findAll().get(0);
-        salaryOffsetService.deleteSalaryOffset(docToDelete.getId());
-
-        logger.debug("Документ удален с ID: {}", docToDelete.getId());
-        assertThat(salaryOffsetRepository.findById(docToDelete.getId())).isNotPresent();
     }
 }

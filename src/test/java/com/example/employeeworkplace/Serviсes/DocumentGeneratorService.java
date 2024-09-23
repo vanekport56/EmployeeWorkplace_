@@ -8,15 +8,13 @@ import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGen
 import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
 import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Disabled;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -28,12 +26,12 @@ import java.time.LocalDate;
  * VacationWithSalary, Certificate и TaxCertificate. При инициализации данных все существующие записи удаляются,
  * затем создаются новые документы с использованием различных репозиториев и сервисов.
  */
+@Slf4j
 @Disabled
 @ActiveProfiles("test")
 @Service
 public class DocumentGeneratorService {
 
-    private static final Logger logger = LoggerFactory.getLogger(DocumentGeneratorService.class);
 
     private final SalaryOffsetRepository salaryOffsetRepository;
     private final VacationWithoutSalaryRepository vacationWithoutSalaryRepository;
@@ -79,7 +77,7 @@ public class DocumentGeneratorService {
      */
     @Transactional
     public void generateAndSaveDocuments() {
-        logger.info("Начинаем генерацию документов.");
+        log.info("Начинаем генерацию документов.");
 
         try {
 
@@ -89,32 +87,32 @@ public class DocumentGeneratorService {
             certificateRepository.deleteAll();
             taxCertificateRepository.deleteAll();
 
-            logger.info("Генерация документов SalaryOffset.");
+            log.info("Генерация документов SalaryOffset.");
             generateSalaryOffsets();
 
 
-            logger.info("Генерация документов VacationWithoutSalary.");
+            log.info("Генерация документов VacationWithoutSalary.");
             generateVacationWithoutSalaries();
 
 
-            logger.info("Генерация документов VacationWithSalary.");
+            log.info("Генерация документов VacationWithSalary.");
             generateVacationWithSalaries();
 
 
-            logger.info("Генерация сертификатов.");
+            log.info("Генерация сертификатов.");
             generateCertificates();
 
 
-            logger.info("Генерация налоговых сертификатов.");
+            log.info("Генерация налоговых сертификатов.");
             generateTaxCertificates();
 
 
         } catch (Exception e) {
-            logger.error("Произошла ошибка при генерации документов: ", e);
+            log.error("Произошла ошибка при генерации документов: ", e);
             throw e;
         }
 
-        logger.info("Генерация документов завершена.");
+        log.info("Генерация документов завершена.");
     }
 
     /**
@@ -142,7 +140,7 @@ public class DocumentGeneratorService {
             salaryOffset.setSumOfMoney(sum);
 
             salaryOffsetRepository.save(salaryOffset);
-            logger.debug("Создан документ SalaryOffset: Название документа: '{}', Дата создания: '{}', Номер документа: '{}', Сумма: '{}",
+            log.debug("Создан документ SalaryOffset: Название документа: '{}', Дата создания: '{}', Номер документа: '{}', Сумма: '{}",
                     salaryOffset.getNameOfTheDocument(),
                     salaryOffset.getDateOfCreation(),
                     salaryOffset.getDocumentNumber(),
@@ -165,7 +163,7 @@ public class DocumentGeneratorService {
 
             vacationWithoutSalaryService.save(vacationWithoutSalary);
 
-            logger.debug("Создан документ VacationWithoutSalary: Название документа: '{}', Дата начала отпуска: '{}', Дата окончания отпуска: '{}', Причина: '{}', Статус утверждения: '{}', Номер документа: '{}', ID пользователя: '{}'",
+            log.debug("Создан документ VacationWithoutSalary: Название документа: '{}', Дата начала отпуска: '{}', Дата окончания отпуска: '{}', Причина: '{}', Статус утверждения: '{}', Номер документа: '{}', ID пользователя: '{}'",
                     vacationWithoutSalary.getNameOfTheDocument(),
                     vacationWithoutSalary.getVacationStartDate(),
                     vacationWithoutSalary.getVacationEndDate(),
@@ -191,7 +189,7 @@ public class DocumentGeneratorService {
 
             vacationWithSalaryService.save(vacationWithSalary);
 
-            logger.debug("Создан документ VacationWithSalary: Название документа: '{}', Дата начала отпуска: '{}', Дата окончания отпуска: '{}', Причина: '{}', Статус утверждения: '{}', Номер документа: '{}', ID пользователя: '{}'",
+            log.debug("Создан документ VacationWithSalary: Название документа: '{}', Дата начала отпуска: '{}', Дата окончания отпуска: '{}', Причина: '{}', Статус утверждения: '{}', Номер документа: '{}', ID пользователя: '{}'",
                     vacationWithSalary.getNameOfTheDocument(),
                     vacationWithSalary.getVacationStartDate(),
                     vacationWithSalary.getVacationEndDate(),
@@ -211,11 +209,11 @@ public class DocumentGeneratorService {
             certificate.setTypeOfTheCertificate(ConstantsOrderedDocuments.Certificate);
 
             String documentNumber = documentNumberGeneratorService.generateDocumentNumber("CERT");
-            certificate.setDocumentNumber(documentNumber);
+            certificate.setCertificateNumber(documentNumber);
 
             certificateRepository.save(certificate);
 
-            logger.debug("Создан документ Certificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
+            log.debug("Создан документ Certificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
                     certificate.getNameOfTheCertificate(),
                     certificate.getTypeOfTheCertificate(),
                     certificate.getCertificateNumber());
@@ -230,11 +228,11 @@ public class DocumentGeneratorService {
             taxCertificate.setTypeOfTheCertificate(ConstantsOrderedDocuments.TaxCertificate);
 
             String documentNumber = documentNumberGeneratorService.generateDocumentNumber("TXCRT");
-            taxCertificate.setDocumentNumber(documentNumber);
+            taxCertificate.setCertificateNumber(documentNumber);
 
             taxCertificateRepository.save(taxCertificate);
 
-            logger.debug("Создан документ TaxCertificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
+            log.debug("Создан документ TaxCertificate: Название сертификата: '{}', Тип сертификата: '{}', Номер документа: '{}'",
                     taxCertificate.getNameOfTheCertificate(),
                     taxCertificate.getTypeOfTheCertificate(),
                     taxCertificate.getCertificateNumber());

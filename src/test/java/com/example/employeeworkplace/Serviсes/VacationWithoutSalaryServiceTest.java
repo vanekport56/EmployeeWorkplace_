@@ -1,7 +1,6 @@
 package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Models.Primary.VacationWithoutSalary;
-import com.example.employeeworkplace.Repositories.Primary.VacationWithoutSalaryRepository;
 import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
 import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import org.junit.jupiter.api.Test;
@@ -12,9 +11,6 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.Mockito.*;
 
 public class VacationWithoutSalaryServiceTest {
-
-    @Mock
-    private VacationWithoutSalaryRepository vacationWithoutSalaryRepository;
 
     @Mock
     private DocumentNumberGeneratorService documentNumberGeneratorService;

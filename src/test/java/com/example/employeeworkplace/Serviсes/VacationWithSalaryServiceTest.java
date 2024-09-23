@@ -14,9 +14,6 @@ import static org.mockito.Mockito.*;
 public class VacationWithSalaryServiceTest {
 
     @Mock
-    private VacationWithSalaryRepository vacationWithSalaryRepository;
-
-    @Mock
     private DocumentNumberGeneratorService documentNumberGeneratorService;
 
     @Mock

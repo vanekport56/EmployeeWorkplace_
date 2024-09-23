@@ -7,10 +7,6 @@ import com.example.employeeworkplace.Models.Primary.VacationWithSalary;
 import com.example.employeeworkplace.Models.Primary.Certificate;
 import com.example.employeeworkplace.Models.Primary.TaxCertificate;
 import com.example.employeeworkplace.Repositories.Primary.*;
-import com.example.employeeworkplace.Repositories.Secondary.UserRepository;
-import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
-import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
-import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,17 +31,7 @@ public class DocumentSaveTest {
     @Autowired
     private VacationWithSalaryRepository vacationWithSalaryRepository;
 
-    @Autowired
-    private DocumentNumberGeneratorService documentNumberGeneratorService;
 
-    @Autowired
-    private VacationWithoutSalaryService vacationWithoutSalaryService;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private VacationWithSalaryService vacationWithSalaryService;
 
     @Autowired
     private TaxCertificateRepository taxCertificateRepository;
@@ -55,7 +41,7 @@ public class DocumentSaveTest {
 
     @BeforeEach
     public void setUp() {
-        // Очистка данных перед каждым тестом
+
         salaryOffsetRepository.deleteAll();
         vacationWithoutSalaryRepository.deleteAll();
         vacationWithSalaryRepository.deleteAll();

@@ -1,13 +1,11 @@
 package com.example.employeeworkplace.Serviсes;
 
 import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.time.Year;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -16,10 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Интеграционные тесты для сервиса генерации номеров документов {@link DocumentNumberGeneratorService}.
  * Проверяют функциональность генерации и сброса счетчика номеров документов.
  */
+@Slf4j
 @SpringBootTest
 public class DocumentNumberGeneratorServiceIntegrationTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(DocumentNumberGeneratorServiceIntegrationTest.class);
+
 
     @Autowired
     private DocumentNumberGeneratorService documentNumberGeneratorService;
@@ -31,7 +30,7 @@ public class DocumentNumberGeneratorServiceIntegrationTest {
     @BeforeEach
     void setUp() {
         documentNumberGeneratorService.resetCounter();
-        logger.debug("Счетчик номера документа сброшен.");
+        log.debug("Счетчик номера документа сброшен.");
     }
 
     /**
@@ -45,8 +44,8 @@ public class DocumentNumberGeneratorServiceIntegrationTest {
         String number1 = documentNumberGeneratorService.generateDocumentNumber(documentType);
         String number2 = documentNumberGeneratorService.generateDocumentNumber(documentType);
 
-        logger.debug("Сгенерированный номер документа 1: {}", number1);
-        logger.debug("Сгенерированный номер документа 2: {}", number2);
+        log.debug("Сгенерированный номер документа 1: {}", number1);
+        log.debug("Сгенерированный номер документа 2: {}", number2);
 
         assertThat(number1).matches(String.format("%s-%d-\\d{3}", documentType, Year.now().getValue()));
         assertThat(number2).matches(String.format("%s-%d-\\d{3}", documentType, Year.now().getValue()));
@@ -66,10 +65,9 @@ public class DocumentNumberGeneratorServiceIntegrationTest {
         documentNumberGeneratorService.resetCounter();
         String number2 = documentNumberGeneratorService.generateDocumentNumber(documentType);
 
-        logger.debug("Сгенерированный номер документа до сброса: {}", number1);
-        logger.debug("Сгенерированный номер документа после сброса: {}", number2);
+        log.debug("Сгенерированный номер документа до сброса: {}", number1);
+        log.debug("Сгенерированный номер документа после сброса: {}", number2);
 
-        // Поскольку сброс счетчика, первый номер после сброса должен быть 001
         assertThat(number2).isEqualTo(String.format("%s-%d-001", documentType, Year.now().getValue()));
 
         assertThat(number1).isEqualTo(number2);

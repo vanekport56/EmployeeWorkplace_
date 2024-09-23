@@ -1,5 +1,6 @@
 package com.example.employeeworkplace.Config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,11 +12,10 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import com.example.employeeworkplace.Repositories.Primary.CertificateRepository;
 import com.example.employeeworkplace.Models.Primary.Certificate;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
+@Slf4j
 @ActiveProfiles("test")
 @SpringBootTest
 @Testcontainers
@@ -41,7 +41,7 @@ public class ContainerCertificateIntegrationTest {
     @Test
     public void certificatesShouldExist() {
         List<Certificate> certificates = certificateRepository.findAll();
-        System.out.println("Список сертификатов: " + certificates);
+        log.info("Список сертификатов: {}", certificates);
         assertFalse(certificates.isEmpty(), "Список сертификатов должен содержать данные.");
     }
 }

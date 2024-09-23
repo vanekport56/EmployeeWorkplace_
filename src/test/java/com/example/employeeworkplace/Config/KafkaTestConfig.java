@@ -17,7 +17,7 @@ public class KafkaTestConfig {
     @Bean(name = "testKafkaTemplate")
     public KafkaTemplate<String, String> kafkaTemplate() {
         Map<String, Object> producerProps = new HashMap<>();
-        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");  // Убедитесь, что этот адрес соответствует вашему встроенному брокеру
+        producerProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         producerProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         ProducerFactory<String, String> producerFactory = new DefaultKafkaProducerFactory<>(producerProps);

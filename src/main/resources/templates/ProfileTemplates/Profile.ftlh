@@ -23,8 +23,7 @@
            display: flex;
            align-items: center;
            justify-content: center;
-           overflow: hidden;
-
+           position: relative;
 
        }
 
@@ -48,13 +47,6 @@
            margin: 40px auto;
            position: relative; /* Чтобы размещать страницу поверх канваса */
            z-index: 1;
-           overflow-y: scroll;
-           max-height: 80vh;
-           height: 80vh;
-           scrollbar-width: none;
-       }
-       .page::-webkit-scrollbar {
-           display: none;
        }
 
        h1 {
@@ -63,20 +55,7 @@
            color: #333;
            text-align: center;
        }
-       select{
-           width: 100%;
-           padding: 12px;
-           border: 1px solid #ddd;
-           border-radius: 4px;
-           margin-top: 10px;
-           margin-bottom: 20px;
-           box-sizing: border-box;
-           font-size: 16px;
-           color: #333;
-           background-color: #f9f9f9;
-           transition: border-color 0.3s, background-color 0.3s;
 
-       }
        input {
            width: 100%;
            padding: 12px;
@@ -89,11 +68,6 @@
            color: #333;
            background-color: #f9f9f9;
            transition: border-color 0.3s, background-color 0.3s;
-       }
-       select:hover, select:focus{
-           border-color: #007bff;
-           background-color: #fff;
-
        }
 
        input:hover, input:focus {
@@ -111,17 +85,16 @@
        }
 
        form button {
-           display: block;
-           padding: 12px;
-           background-color: #333;
-           color: white;
-           text-decoration: none;
-           text-align: center;
-           transition: background-color 0.3s ease;
-           border: none;
+           display: inline-block;
            width: 100%;
+           padding: 14px;
+           border: none;
            border-radius: 4px;
-           font-size: 16px;
+           color: #fff;
+           background-color: #007bff;
+           font-size: 18px;
+           cursor: pointer;
+           transition: background-color 0.3s, box-shadow 0.3s;
        }
 
        form button:hover {
@@ -266,7 +239,6 @@
        .button {
            display: block;
            padding: 12px;
-           margin-top: 12px;
            background-color: #333;
            color: white;
            text-decoration: none;
@@ -309,10 +281,10 @@
 <div class="page">
     <header>
         <ul class="navbar">
-
             <#if userRoles == "admin">
                 <li class="dropdown"><a href="/admin/dashboard">Администрирование</a></li>
             </#if>
+
             <li class="dropdown"><a href="/vacation/">Отпуск</a></li>
             <li class="dropdown"><a href="/salary/">Зарплата</a></li>
             <li class="dropdown"><a href="/orderadocument/">Заказать документ</a></li>
@@ -392,7 +364,7 @@
         </div>
 
         <div class="profile-section">
-
+            <h2>Действия</h2>
             <button type="button" class="button" onclick="toggleEditForm(true)">Редактировать профиль</button>
             <p><a href="/changePassword" class="link-button">Изменить пароль</a></p>
         </div>
