@@ -47,6 +47,10 @@
            margin: 40px auto;
            position: relative; /* Чтобы размещать страницу поверх канваса */
            z-index: 1;
+           overflow-y: scroll;
+           height: 80vh;
+           max-height: 80vh;
+           scrollbar-width: none;
        }
 
        h1 {
@@ -56,7 +60,7 @@
            text-align: center;
        }
 
-       input {
+       input, select {
            width: 100%;
            padding: 12px;
            border: 1px solid #ddd;
@@ -87,6 +91,7 @@
        form button {
            display: inline-block;
            width: 100%;
+           margin-top: 10px;
            padding: 14px;
            border: none;
            border-radius: 4px;
@@ -364,7 +369,6 @@
         </div>
 
         <div class="profile-section">
-            <h2>Действия</h2>
             <button type="button" class="button" onclick="toggleEditForm(true)">Редактировать профиль</button>
             <p><a href="/changePassword" class="link-button">Изменить пароль</a></p>
         </div>

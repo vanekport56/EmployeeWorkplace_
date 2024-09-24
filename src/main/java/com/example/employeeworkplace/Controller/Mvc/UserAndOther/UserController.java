@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Контроллер для управления пользователями.
@@ -46,12 +47,13 @@ public class UserController {
 
 
 
-        currentUser.setFullName(currentUser.getFullName() != null ? currentUser.getFullName() : "");
-        currentUser.setPosition(currentUser.getPosition() != null ? currentUser.getPosition() : "");
-        currentUser.setBirthDate(currentUser.getBirthDate() != null ? currentUser.getBirthDate() : null);
-        currentUser.setEmail(currentUser.getEmail() != null ? currentUser.getEmail() : "");
-        currentUser.setPhoneNumber(currentUser.getPhoneNumber() != null ? currentUser.getPhoneNumber() : "");
-        currentUser.setGender(currentUser.getGender() != null ? currentUser.getGender() : Gender.MALE);
+        currentUser.setFullName(Optional.ofNullable(currentUser.getFullName()).orElse(""));
+        currentUser.setPosition(Optional.ofNullable(currentUser.getPosition()).orElse(""));
+        currentUser.setBirthDate(currentUser.getBirthDate());
+        currentUser.setEmail(Optional.ofNullable(currentUser.getEmail()).orElse(""));
+        currentUser.setPhoneNumber(Optional.ofNullable(currentUser.getPhoneNumber()).orElse(""));
+        currentUser.setGender(Optional.ofNullable(currentUser.getGender()).orElse(Gender.MALE));
+
 
         List<Gender> genders = List.of(Gender.MALE, Gender.FEMALE);
         model.addAttribute("user", currentUser);

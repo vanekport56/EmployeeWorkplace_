@@ -40,7 +40,7 @@ public class KafkaConfig {
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-        configProps.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false); // Отключаем заголовки с типом
+        configProps.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
 
         log.debug("Конфигурация продюсера Kafka: {}", configProps);
 

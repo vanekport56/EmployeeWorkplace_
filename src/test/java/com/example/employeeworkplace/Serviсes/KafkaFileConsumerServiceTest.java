@@ -66,7 +66,7 @@ public class KafkaFileConsumerServiceTest {
         sendMessageToKafkaViaDocker(jsonMessage);
 
         log.debug("Ожидание, пока сообщение будет обработано и сохранено в базу данных...");
-        await().atMost(60, SECONDS).until(() -> {
+        await().atMost(10, SECONDS).until(() -> {
             log.debug("Проверка наличия файла 'example.txt' в репозитории...");
             List<FileEntity> savedFileEntities = fileRepository.findByFileName("example.txt");
             boolean fileExists = !savedFileEntities.isEmpty();

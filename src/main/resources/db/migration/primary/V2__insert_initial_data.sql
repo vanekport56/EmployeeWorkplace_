@@ -1,43 +1,43 @@
 -- Вставка начальных данных в таблицу SalaryOffset
 INSERT INTO salary_offset (name_of_the_document, official_position, date_of_creation, user_id, document_number, sum_of_money)
 VALUES
-    ('Salary Offset Document 0', 'Position 0', CURRENT_DATE, 1, 'SO00001', 0.00),
-    ('Salary Offset Document 1', 'Position 1', CURRENT_DATE, 1, 'SO00002', 1.00),
-    ('Salary Offset Document 2', 'Position 2', CURRENT_DATE, 1, 'SO00003', 2.00),
-    ('Salary Offset Document 14', 'Position 14', CURRENT_DATE, 1, 'SO00015', 14.00);
+    ('Начисление заработной платы', 'Бухгалтер', CURRENT_DATE, 1, 'SO-2024-001', 32000),
+    ('Начисление заработной платы', 'Бухгалтер', CURRENT_DATE, 1, 'SO-2024-002', 35000),
+    ('Начисление заработной платы', 'Менеджер', CURRENT_DATE, 2, 'SO-2024-003', 70000),
+    ('Начисление заработной платы', 'Менеджер', CURRENT_DATE, 2, 'SO-2024-004', 70000);
 
 -- Вставка данных в таблицу VacationWithoutSalary
 INSERT INTO vacation_without_salary (vacation_start_date, vacation_end_date, reason, approval_status, user_id, document_number, date_of_creation, name_of_the_document, official_position)
 VALUES
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VWS00001', CURRENT_DATE, 'Vacation Without Salary Document 1', 'Position 1'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VWS00002', CURRENT_DATE, 'Vacation Without Salary Document 2', 'Position 2'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VWS00003', CURRENT_DATE, 'Vacation Without Salary Document 3', 'Position 3'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VWS00004', CURRENT_DATE, 'Vacation Without Salary Document 4', 'Position 4'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VWS00005', CURRENT_DATE, 'Vacation Without Salary Document 5', 'Position 5');
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 1, 'VWS-2024-001', CURRENT_DATE, 'Отпуск без сохранения заработной платы', 'Бухгалтер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 1, 'VWS-2024-002', CURRENT_DATE, 'Отпуск без сохранения заработной платы', 'Бухгалтер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 1, 'VWS-2024-003', CURRENT_DATE, 'Отпуск без сохранения заработной платы', 'Бухгалтер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 2, 'VWS-2024-004', CURRENT_DATE, 'Отпуск без сохранения заработной платы', 'Менеджер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 2, 'VWS-2024-005', CURRENT_DATE, 'Отпуск без сохранения заработной платы', 'Менеджер');
 
 -- Вставка начальных данных в таблицу VacationWithSalary
 INSERT INTO vacation_with_salary (vacation_start_date, vacation_end_date, reason, approval_status, user_id, document_number, date_of_creation, name_of_the_document, official_position)
 VALUES
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VOS00001', CURRENT_DATE, 'Vacation With Salary Document 1', 'Position 1'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VOS00002', CURRENT_DATE, 'Vacation With Salary Document 2', 'Position 2'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VOS00003', CURRENT_DATE, 'Vacation With Salary Document 3', 'Position 3'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VOS00004', CURRENT_DATE, 'Vacation With Salary Document 4', 'Position 4'),
-    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Personal', 'Approved', 1, 'VOS00005', CURRENT_DATE, 'Vacation With Salary Document 5', 'Position 5');
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 1, 'VWO-2024-001', CURRENT_DATE, 'Оплачиваемый отпуск', 'Бухгалтер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 1, 'VWO-2024-002', CURRENT_DATE, 'Оплачиваемый отпуск', 'Бухгалтер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 2, 'VWO-2024-003', CURRENT_DATE, 'Оплачиваемый отпуск', 'Менеджер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 2, 'VWO-2024-004', CURRENT_DATE, 'Оплачиваемый отпуск', 'Менеджер'),
+    (CURRENT_DATE, CURRENT_DATE + INTERVAL '7 days', 'Отдых', 'Согласован', 2, 'VWO-2024-005', CURRENT_DATE, 'Оплачиваемый отпуск', 'Менеджер');
 
 -- Вставка начальных данных в таблицу Certificate
 INSERT INTO certificate (user_id, name_of_the_certificate, type_of_the_certificate, certificate_number)
 VALUES
-    (1, 'Certificate Name 0', 'Certificate', 'CERT00001'),
-    (1, 'Certificate Name 1', 'Certificate', 'CERT00002'),
-    (1, 'Certificate Name 2', 'Certificate', 'CERT00003'),
-    (1, 'Certificate Name 3', 'Certificate', 'CERT00004'),
-    (1, 'Certificate Name 4', 'Certificate', 'CERT00005');
+    (1, 'С места работы', 'Справка', 'SERT-2024-001'),
+    (1, 'О доходах', 'Справка', 'SERT-2024-002'),
+    (1, 'О неполучении пособия по нетрудоспособности', 'Справка', 'SERT-2024-003'),
+    (2, 'С места работы', 'Справка', 'SERT-2024-004'),
+    (2, 'О доходах', 'Справка', 'SERT-2024-005');
 
 -- Вставка начальных данных в таблицу TaxCertificate
 INSERT INTO tax_certificate (user_id, name_of_the_certificate, type_of_the_certificate, certificate_number)
 VALUES
-    (1, 'Certificate Name 0', 'TaxCertificate', 'TXCRT00001'),
-    (1, 'Certificate Name 1', 'TaxCertificate', 'TXCRT00002'),
-    (1, 'Certificate Name 2', 'TaxCertificate', 'TXCRT00003'),
-    (1, 'Certificate Name 3', 'TaxCertificate', 'TXCRT00004'),
-    (1, 'Certificate Name 4', 'TaxCertificate', 'TXCRT00005');
+    (1, 'Для декларации', '	2-НДФЛ', 'SERT-2024-001'),
+    (1, 'Подтверждение доходов', '	2-НДФЛ', 'SERT-2024-002'),
+    (2, 'Подтверждение доходов', '	2-НДФЛ', 'SERT-2024-003'),
+    (2, 'Для декларации', '	2-НДФЛ', 'SERT-2024-004'),
+    (2, 'Подтверждение доходов', '	2-НДФЛ', 'SERT-2024-005');

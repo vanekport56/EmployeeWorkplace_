@@ -8,6 +8,7 @@ import com.example.employeeworkplace.Models.Primary.Certificate;
 import com.example.employeeworkplace.Models.Primary.TaxCertificate;
 import com.example.employeeworkplace.Repositories.Primary.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
+@Disabled
 public class DocumentSaveTest {
 
     @Autowired

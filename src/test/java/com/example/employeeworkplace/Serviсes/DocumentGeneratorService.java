@@ -120,7 +120,7 @@ public class DocumentGeneratorService {
      * <p>
      * Этот метод вызывается после создания компонента и выполняет генерацию и сохранение документов.
      */
-    @PostConstruct
+//    @PostConstruct
     public void initializeData() {
         generateAndSaveDocuments();
     }

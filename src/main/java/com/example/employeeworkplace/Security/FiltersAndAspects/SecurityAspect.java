@@ -61,12 +61,6 @@ public class SecurityAspect {
         }
     }
 
-    /**
-     * Проверяет, имеет ли текущий пользователь необходимые права доступа.
-     *
-     * @param currentUser текущий пользователь
-     * @return {@code true}, если у пользователя есть доступ, {@code false} в противном случае
-     */
     private boolean hasPermission(User currentUser, String[] requiredRoles) {
         return Arrays.stream(requiredRoles)
                 .anyMatch(role -> currentUser.getRole().name().equals(role));

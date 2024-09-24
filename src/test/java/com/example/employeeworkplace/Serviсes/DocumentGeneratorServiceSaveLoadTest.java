@@ -8,6 +8,7 @@ import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGen
 import com.example.employeeworkplace.Services.DocumentServices.VacationWithSalaryService;
 import com.example.employeeworkplace.Services.DocumentServices.VacationWithoutSalaryService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,10 +22,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
+
 public class DocumentGeneratorServiceSaveLoadTest {
 
-    @Autowired
-    private DocumentGeneratorService documentGeneratorService;
+
 
     @Autowired
     private SalaryOffsetRepository salaryOffsetRepository;
@@ -35,14 +36,11 @@ public class DocumentGeneratorServiceSaveLoadTest {
     @Autowired
     private VacationWithSalaryRepository vacationWithSalaryRepository;
 
-    @Autowired
-    private DocumentNumberGeneratorService documentNumberGeneratorService;
+
 
     @Autowired
     private VacationWithoutSalaryService vacationWithoutSalaryService;
 
-    @Autowired
-    private UserRepository userRepository;
 
     @Autowired
     private VacationWithSalaryService vacationWithSalaryService;

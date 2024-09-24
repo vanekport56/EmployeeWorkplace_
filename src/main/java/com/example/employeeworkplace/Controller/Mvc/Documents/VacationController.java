@@ -54,6 +54,7 @@ public class VacationController {
 
         List<VacationDocumentation> vacationDocuments = vacationDocumentationService.filterByCurrentUser(
                 vacationDocumentationService.findAllWithUserDetails(), idcurrentUser);
+
         if (vacationDocuments != null && !vacationDocuments.isEmpty()) {
             log.info("Количество документов отпуска для текущего пользователя: {}", vacationDocuments.size());
             for (VacationDocumentation doc : vacationDocuments) {

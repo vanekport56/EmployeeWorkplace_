@@ -3,6 +3,7 @@ package com.example.employeeworkplace.Serviсes;
 import com.example.employeeworkplace.Services.DocumentServices.DocumentNumberGeneratorService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @Slf4j
 @SpringBootTest
+
 public class DocumentNumberGeneratorServiceIntegrationTest {
 
 
